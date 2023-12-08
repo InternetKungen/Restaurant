@@ -3,14 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test Repo Grupp 4</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="./app.js"></script>
+    <title>Restaurang</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="./src/js/app.js" defer></script>
   </head>
   <body>
-    <h1>Hello!</h1>
-    <p>from motasem branch</p>
-    <p>test from motasem branch</p>
-    <p>Text added from igor-test branch</p>
+   <header>
+    <header>
+      <!-- LEFT-CONTAINER -->
+      <div class="left-container">
+        <!-- MENY-KNAPP -->
+        <div class="menu-button" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <!--MENYN -->
+      <div class="hidden-menu menu-container">
+        <nav class="menu-container__nav-menu">
+          <ul>
+            <!-- MENY -->
+            <li>
+              <a href="#" data-submenu="menu" onclick="toggleSubMenu(this)">Meny</a>
+              <div class="hidden-sub sub-navigation" id="menu">
+                <ul>
+                  <li><a href="#">Hela menyn</a></li>
+                  <li><a href="#">Förrätter</a></li>
+                  <li><a href="#">Huvudrätter</a></li>
+                  <li><a href="#">Dessert</a></li>
+                  <li><a href="#">Drycker</a></li>
+                </ul>
+              </div>
+            </li>
+        
+            <!-- HOURS & LOCATION -->
+            <li>
+              <a href="#" data-submenu="hours-location" onclick="toggleSubMenu(this)">Öppettider & Plats</a>
+              <div class="hidden-sub sub-navigation" id="hours-location">
+                <ul>
+                  <li><a href="#">Öppettider</a></li>
+                  <li><a href="#">Plats</a></li>
+                </ul>
+              </div>
+            </li>
+        
+            <!-- PRIVATE DINING & CATERING -->
+            <li>
+              <a href="#" data-submenu="private-dining-catering" onclick="toggleSubMenu(this)">Privata sammankomster & Catering</a>
+              <div class="hidden-sub sub-navigation" id="private-dining-catering">
+                <ul>
+                  <li><a href="#">Privata sällskap</a></li>
+                  <li><a href="#">Catering</a></li>
+                </ul>
+              </div>
+            </li>
+        
+            <!-- SHOP -->
+            <li>
+              <a href="#" data-submenu="shop" onclick="toggleSubMenu(this)">Butik</a>
+              <div class="hidden-sub sub-navigation" id="shop">
+                <ul>
+                  <li><a href="#">Produkter</a></li>
+                  <li><a href="#">Souvenirer</a></li>
+                </ul>
+              </div>
+            </li>
+        
+            <!-- DELIVERY -->
+            <li>
+              <a href="#" data-submenu="delivery" onclick="toggleSubMenu(this)">Leverans</a>
+              <div class="hidden-sub sub-navigation" id="delivery">
+                <ul>
+                  <li><a href="#">Beställ nu</a></li>
+                  <li><a href="#">Leveransalternativ</a></li>
+                </ul>
+              </div>
+            </li>
+        
+            <!-- ADRESS -->
+            <li>
+              <a href="#" data-submenu="address" onclick="toggleSubMenu(this)">Adress</a>
+              <div class="hidden-sub sub-navigation" id="address">
+                <ul>
+                  <li><a href="#">Storgatan 68, 171 52 Solna</a></li>
+                  <li><a href="#">Telefon: 08-83 16 20</a></li>
+                  <li><a href="#">Boka nu</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+   </header>
+   <main>
+     <!-- OVERLAY-MENY -->
+     <div id="overlay" class="overlay visible"></div>
+   </main>
   </body>
 </html>
