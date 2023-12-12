@@ -2,8 +2,22 @@
 const menuDropdown = document.querySelector('menu');
 const menuButton = document.querySelector('.menu-button');
 
+//Stänger meny om man klickar utanför
+document.addEventListener('click', (event) => {
+    const isMenuClicked = menuButton.contains(event.target) || menuDropdown.contains(event.target);
 
+    // Kolla om klicket var utanför menyn och knappen
+    if (!isMenuClicked) {
+        // Stäng menyn genom att ta bort "menu-open" klassen
+        menuDropdown.classList.remove("menu-open");
+    }
+});
 
+//Stänger meny om man scrollar
+document.addEventListener('scroll', () => {
+    // Stäng menyn genom att ta bort "menu-open" klassen
+    menuDropdown.classList.remove("menu-open");
+});
 
 //Dropdown meny - 
 let sectionContent = document.querySelectorAll('.section-content');
@@ -21,7 +35,7 @@ for(let i = 0; i < linksMenu.length; i++){
         //     }
         // }
 
-        // Stäng menyn
+        // Stäng menyn när man klickar på val
         menuDropdown.classList.toggle("menu-open");
 
     });
@@ -91,6 +105,15 @@ buttonFooterOpener.addEventListener('click', () => {
 });
 
 
+function changeFigureLogoText(newText) {
+    const figureLogo = document.querySelector('.figure-logo');
+    if (figureLogo) {
+        figureLogo.innerText = newText;
+    } else {
+        console.error("Elementet med klassen '.figure-logo' kunde inte hittas.");
+    }
+}
+
 // Denna kod körs först när sidan laddas och gömmer saker
 document.addEventListener('DOMContentLoaded', function () {
      //hidden
@@ -112,6 +135,9 @@ function loadHomePage() {
     
     //visible
     document.querySelector('.section-dagens').style.display = 'flex';
+    
+    //Title in header
+    changeFigureLogoText("Våran Restaurang");
 }
 
 function loadMenuPage() {
@@ -124,6 +150,9 @@ function loadMenuPage() {
     
     //visible
     document.querySelector('.section-meny').style.display = 'flex';
+
+    //Title in header
+    changeFigureLogoText("Meny");
 }
 
 function loadOpenHourPage() {
@@ -136,6 +165,9 @@ function loadOpenHourPage() {
     
     //visible
     document.querySelector('.section-tider').style.display = 'flex';
+
+    //Title in header
+    changeFigureLogoText("Öppettider");
 }
 
 function loadBookingPage() {
@@ -148,6 +180,9 @@ function loadBookingPage() {
     
     //visible
     document.querySelector('.section-boka').style.display = 'flex';
+
+    //Title in header
+    changeFigureLogoText("Bordsbokning");
 }
 
 function loadContactPage() {
@@ -160,4 +195,7 @@ function loadContactPage() {
     
     //visible
     document.querySelector('.section-kontakt').style.display = 'flex';
+
+    //Title in header
+    changeFigureLogoText("Kontakta oss");
 }
