@@ -89,6 +89,11 @@ buttonFooterOpener.addEventListener('click', () => {
     if(buttonFooterOpener.innerText === "Se beställning"){
         
         footer.classList.toggle('footer-open');
+
+        //Ändra titel i header
+        originalTitle = document.querySelector('.figure-logo').innerText;
+        changeFigureLogoText("Beställning")
+
         setTimeout(() => {        
             buttonFooterOpener.innerText = "Tillbaka";  
             buttonFooterOpener.style.backgroundColor = "#FFCB47";
@@ -97,7 +102,11 @@ buttonFooterOpener.addEventListener('click', () => {
     } else{
         
         footer.classList.toggle('footer-open');
-        setTimeout(() => {        
+
+        //Ändra tillbaka titel i header
+        changeFigureLogoText(originalTitle);
+
+        setTimeout(() => {     
             buttonFooterOpener.innerText = "Se beställning";   
             buttonFooterOpener.style.backgroundColor = "#2C4251";
             buttonFooterOpener.style.color = "#FFCB47";         
