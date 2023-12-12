@@ -4,28 +4,23 @@ const menuButton = document.querySelector('.menu-button');
 
 
 
-// Dropdown menu - Links
-const menuLinkHem = document.querySelector('#menu-link-hem');
-menuLinkHem.addEventListener('click', () => {
-    
-});
-const menuLinkMeny = document.querySelector('#menu-link-meny');
-menuLinkMeny.addEventListener('click', () => {
 
-});
-const menuLinkOppettider = document.querySelector('#menu-link-oppettider');
-menuLinkOppettider.addEventListener('click', () => {
+//Dropdown meny - 
+let sectionContent = document.querySelectorAll('.section-content');
+let linksMenu = document.querySelectorAll('.a-menu');
 
-});
-const menuLinkBoka = document.querySelector('#menu-link-boka');
-menuLinkBoka.addEventListener('click', () => {
-
-});
-const menuLinkKontakt = document.querySelector('#menu-link-kontakt');
-menuLinkKontakt.addEventListener('click', () => {
-
-});
-
+for(let i = 0; i < linksMenu.length; i++){
+    linksMenu[i].addEventListener('click', () => {
+        for(let j = 0; j < linksMenu.length; j++){
+            if(linksMenu[i] === linksMenu[j]){
+                sectionContent[j].classList.remove('hide');
+            } else{
+                sectionContent[j].classList.add('hide');
+            }
+            
+        }
+    });
+}
 
 const articleDish = document.querySelector('.article-dish');
 const buttonHalfCircle = document.querySelector('.button-half-circle');
