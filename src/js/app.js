@@ -11,14 +11,20 @@ let linksMenu = document.querySelectorAll('.a-menu');
 
 for(let i = 0; i < linksMenu.length; i++){
     linksMenu[i].addEventListener('click', () => {
-        for(let j = 0; j < linksMenu.length; j++){
-            if(linksMenu[i] === linksMenu[j]){
-                sectionContent[j].classList.remove('hide');
-            } else{
-                sectionContent[j].classList.add('hide');
-            }
+
+        
+        // for(let j = 0; j < linksMenu.length; j++){
+        //     if(linksMenu[i] === linksMenu[j]){
+        //         sectionContent[j].classList.remove('hide');
+        //     } else{
+        //         sectionContent[j].classList.add('hide');
+        //     }
             
-        }
+        // }
+
+        // Stäng menyn
+        menuDropdown.classList.toggle("menu-open");
+
     });
 }
 
@@ -84,3 +90,75 @@ buttonFooterOpener.addEventListener('click', () => {
     }
     
 });
+
+
+// Denna kod körs först när sidan laddas och gömmer saker
+document.addEventListener('DOMContentLoaded', function () {
+     //hidden
+     document.querySelector('.section-meny').style.display = 'none';
+     document.querySelector('.section-tider').style.display = 'none';
+     document.querySelector('.section-boka').style.display = 'none';
+     document.querySelector('.section-kontakt').style.display = 'none';
+     //visible
+     document.querySelector('.section-dagens').style.display = 'flex';
+});
+
+function loadHomePage() {
+    //hidden
+    document.querySelector('.section-meny').style.display = 'none';
+    document.querySelector('.section-tider').style.display = 'none';
+    document.querySelector('.section-boka').style.display = 'none';
+    document.querySelector('.section-kontakt').style.display = 'none';
+    // document.querySelector('.section-footer-order').style.display = 'none';
+    
+    //visible
+    document.querySelector('.section-dagens').style.display = 'flex';
+}
+
+function loadMenuPage() {
+    //hidden
+    document.querySelector('.section-dagens').style.display = 'none';
+    document.querySelector('.section-tider').style.display = 'none';
+    document.querySelector('.section-boka').style.display = 'none';
+    document.querySelector('.section-kontakt').style.display = 'none';
+    // document.querySelector('.section-footer-order').style.display = 'none';
+    
+    //visible
+    document.querySelector('.section-meny').style.display = 'flex';
+}
+
+function loadOpenHourPage() {
+    //hidden
+    document.querySelector('.section-dagens').style.display = 'none';
+    document.querySelector('.section-boka').style.display = 'none';
+    document.querySelector('.section-meny').style.display = 'none';
+    document.querySelector('.section-kontakt').style.display = 'none';
+    // document.querySelector('.section-footer-order').style.display = 'none';
+    
+    //visible
+    document.querySelector('.section-tider').style.display = 'flex';
+}
+
+function loadBookingPage() {
+    //hidden
+    document.querySelector('.section-dagens').style.display = 'none';
+    document.querySelector('.section-tider').style.display = 'none';
+    document.querySelector('.section-meny').style.display = 'none';
+    document.querySelector('.section-kontakt').style.display = 'none';
+    // document.querySelector('.section-footer-order').style.display = 'none';
+    
+    //visible
+    document.querySelector('.section-boka').style.display = 'flex';
+}
+
+function loadContactPage() {
+    //hidden
+    document.querySelector('.section-dagens').style.display = 'none';
+    document.querySelector('.section-tider').style.display = 'none';
+    document.querySelector('.section-meny').style.display = 'none';
+    document.querySelector('.section-boka').style.display = 'none';
+    // document.querySelector('.section-footer-order').style.display = 'none';
+    
+    //visible
+    document.querySelector('.section-kontakt').style.display = 'flex';
+}

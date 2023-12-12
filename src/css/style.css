@@ -233,7 +233,10 @@ menu a {
   
 }
 
-
+.section-content {
+  display: flex;
+  flex-direction: column;
+}
 
 main {
   padding: var(--padding);
