@@ -428,3 +428,7 @@ footer {
   border: 1px solid var(--h3-dish-color);
   padding: var(--padding);
 }
+
+.hide {
+  display: none;
+}
