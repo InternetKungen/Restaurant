@@ -19,7 +19,6 @@ for(let i = 0; i < linksMenu.length; i++){
         //     } else{
         //         sectionContent[j].classList.add('hide');
         //     }
-            
         // }
 
         // Stäng menyn
@@ -95,12 +94,12 @@ buttonFooterOpener.addEventListener('click', () => {
 // Denna kod körs först när sidan laddas och gömmer saker
 document.addEventListener('DOMContentLoaded', function () {
      //hidden
-     document.querySelector('.section-meny').style.display = 'none';
-     document.querySelector('.section-tider').style.display = 'none';
-     document.querySelector('.section-boka').style.display = 'none';
-     document.querySelector('.section-kontakt').style.display = 'none';
-     //visible
-     document.querySelector('.section-dagens').style.display = 'flex';
+    document.querySelector('.section-meny').style.display = 'none';
+    document.querySelector('.section-tider').style.display = 'none';
+    document.querySelector('.section-boka').style.display = 'none';
+    document.querySelector('.section-kontakt').style.display = 'none';
+    //visible
+    document.querySelector('.section-dagens').style.display = 'flex';
 });
 
 function loadHomePage() {
