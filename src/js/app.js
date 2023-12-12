@@ -2,6 +2,31 @@
 const menuDropdown = document.querySelector('menu');
 const menuButton = document.querySelector('.menu-button');
 
+
+
+// Dropdown menu - Links
+const menuLinkHem = document.querySelector('#menu-link-hem');
+menuLinkHem.addEventListener('click', () => {
+    
+});
+const menuLinkMeny = document.querySelector('#menu-link-meny');
+menuLinkMeny.addEventListener('click', () => {
+
+});
+const menuLinkOppettider = document.querySelector('#menu-link-oppettider');
+menuLinkOppettider.addEventListener('click', () => {
+
+});
+const menuLinkBoka = document.querySelector('#menu-link-boka');
+menuLinkBoka.addEventListener('click', () => {
+
+});
+const menuLinkKontakt = document.querySelector('#menu-link-kontakt');
+menuLinkKontakt.addEventListener('click', () => {
+
+});
+
+
 const articleDish = document.querySelector('.article-dish');
 const buttonHalfCircle = document.querySelector('.button-half-circle');
 

@@ -1,110 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Våran Restaurang</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-	<link rel="stylesheet" type="text/css" href="./src/css/style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto&display=swap" rel="stylesheet">
-	<script src="./src/js/app.js" defer></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Våran Restaurang</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./src/js/app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="menu-button" type="button" name="Meny">
+          <i class="fas fa-bars menu-icon"></i>
+        </button>
 
-	<header>
-		<nav>
-			<button class="menu-button" type="button" name="Meny">
-				<i class="fas fa-bars menu-icon"></i>
-			</button>
+        <menu>
+          <li><a href="index.html" name="Nyheter">HEM</a></li>
+          <li><a href="meny.html" name="Böcker">MENY</a></li>
+          <li><a href="oppettider.html" name="Evenemang">ÖPPETTIDER</a></li>
+          <li><a href="bokabord.html" name="Om">BOKA BORD</a></li>
+          <li><a href="kontakt.html" name="Kontakt">KONTAKT</a></li>
+        </menu>
 
-			<menu>
-				<li><a href="index.html" name="Nyheter">HEM</a></li>
-				<li><a href="meny.html" name="Böcker">MENY</a></li>
-				<li><a href="oppettider.html" name="Evenemang">ÖPPETTIDER</a></li>
-				<li><a href="bokabord.html" name="Om">BOKA BORD</a></li>
-				<li><a href="kontakt.html" name="Kontakt">KONTAKT</a></li>
-			</menu>
+        <figure class="figure-logo">Våran Restaurang</figure>
+      </nav>
 
-      <figure class="figure-logo">Våran Restaurang</figure>
-		</nav>
-        
-        <section class="section-filter">
-            <button type="button" class="button-filter">FÖRRÄTT</button>
-            <button type="button" class="button-filter">VARMRÄTT</button>
-            <button type="button" class="button-filter">DESSERT</button>
-        </section>
-	</header>
-	
-  <main>
-	
-	
+      <section class="section-filter">
+        <button type="button" class="button-filter">FÖRRÄTT</button>
+        <button type="button" class="button-filter">VARMRÄTT</button>
+        <button type="button" class="button-filter">DESSERT</button>
+      </section>
+    </header>
 
-    
-	<section class="section-menu">
-    <article class="article-dish">
-      
-      <figure class="figure-dish"><img src="./src/img/pizza.jpg" class="img-dish"></figure>
-      <span class="span-dish"><button class="button-half-circle"></button><h3 class="h3-dish">Pizza Frontend</h3></span>
-      
-      <p class="p-dish">En fantastiskt god pizza bakad i stenugn med en enbart de bästa ingredienser, färska variabler, snabba loopar och ett smaskigt gränssnitt. </p>
-      
-    </article>
-	</section>
+    <main>
+      <section class="section-menu">
+        <article class="article-dish">
+          <figure class="figure-dish">
+            <img src="./src/img/pizza.jpg" class="img-dish" />
+          </figure>
+          <span class="span-dish"
+            ><button class="button-half-circle"></button>
+            <h3 class="h3-dish">Pizza Frontend</h3></span
+          >
 
+          <p class="p-dish">
+            En fantastiskt god pizza bakad i stenugn med en enbart de bästa
+            ingredienser, färska variabler, snabba loopar och ett smaskigt
+            gränssnitt.
+          </p>
+        </article>
+      </section>
+    </main>
 
+    <footer>
+      <section class="section-footer">
+        <h3 class="h3-footer">Valda maträtter</h3>
+        <span class="span-footer-dishes">3</span>
+        <button class="button-footer-opener">Se beställning</button>
+      </section>
+      <section class="section-footer-order">
+        <ul class="ul-footer-order">
+          <li class="li-order">
+            <span class="span-footer-itemname"> Namn på rätt </span>
 
-  </main>
+            <span class="span-footer-numberofitem"> 1 </span>
 
-  <footer>
-	<section class="section-footer">
-		<h3 class="h3-footer">Valda maträtter</h3>
-		<span class="span-footer-dishes">3</span>
-		<button class="button-footer-opener">Se beställning</button>
+            <span class="span-footer-buttons">
+              <button class="button-order-add">Lägg till</button>
+              <button class="button-order-remove">Ta bort</button>
+            </span>
+          </li>
+          <li class="li-order">
+            <span class="span-footer-itemname"> Namn på rätt </span>
 
-	</section>
-	<section class="section-footer-order">
-		<ul class="ul-footer-order">
-			<li class="li-order">
-				<span class="span-footer-itemname">
-					Namn på rätt
-				</span>
-				
-				<span class="span-footer-numberofitem">
-					1
-				</span>
-				
-				<span class="span-footer-buttons">
-					<button class="button-order-add">Lägg till</button>
-					<button class="button-order-remove">Ta bort</button>
-				</span>
-			</li>
-			<li class="li-order">
-				<span class="span-footer-itemname">
-					Namn på rätt
-				</span>
-				
-				<span class="span-footer-numberofitem">
-					1
-				</span>
-				
-				<span class="span-footer-buttons">
-					<button class="button-order-add">Lägg till</button>
-					<button class="button-order-remove">Ta bort</button>
-				</span>
-			</li>
-		</ul>
+            <span class="span-footer-numberofitem"> 1 </span>
 
+            <span class="span-footer-buttons">
+              <button class="button-order-add">Lägg till</button>
+              <button class="button-order-remove">Ta bort</button>
+            </span>
+          </li>
+        </ul>
+      </section>
 
-	</section>
-
-	<section class="section-footer-submitorder">
-		<button class="button-submitorder">Beställ</button>
-
-	</section>
-
-  </footer>
-
-</body>
+      <section class="section-footer-submitorder">
+        <button class="button-submitorder">Beställ</button>
+      </section>
+    </footer>
+  </body>
 </html>
