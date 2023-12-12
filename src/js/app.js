@@ -2,15 +2,15 @@
 const menuDropdown = document.querySelector('menu');
 const menuButton = document.querySelector('.menu-button');
 
-//Dropdown meny ----------
+//Dropdown meny ---
 let sectionContent = document.querySelectorAll('.section-content');
 let linksMenu = document.querySelectorAll('.a-menu');
 
 for(let i = 0; i < linksMenu.length; i++){
     linksMenu[i].addEventListener('click', () => {
 
-        //Ändrad, använder ghetto-functioner för tillfället
-        //Tar bort hide på kort som klickas/ Lägger till hide på resten
+        //Ändrad, använder funktioner för tillfället
+        //Tar bort hide på menyval som klickas/ Lägger till hide på resten
         // for(let j = 0; j < linksMenu.length; j++){
         //     if(linksMenu[i] === linksMenu[j]){
         //         sectionContent[j].classList.remove('hide');
