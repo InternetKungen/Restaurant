@@ -1,46 +1,66 @@
-function toggleMenu() {
-    const section_menu = document.querySelector('.menu-container');
-    const menuButton = document.querySelector('.menu-button');
-    const overlay = document.querySelector('.overlay');
 
-    section_menu.classList.toggle('hidden-menu');
-    menuButton.classList.toggle('open'); // Lägg till eller ta bort CSS-klassen 'open' 
-    overlay.classList.toggle('visible');
+const menuDropdown = document.querySelector('menu');
+const menuButton = document.querySelector('.menu-button');
 
-    // Lägg till eventlyssnare för klick utanför menyn
-    document.addEventListener('click', function (event) {
-    const isClickInsideMenu = section_menu.contains(event.target);
-    const isClickOnMenuButton = menuButton.contains(event.target);
+const articleDish = document.querySelector('.article-dish');
+const buttonHalfCircle = document.querySelector('.button-half-circle');
 
-    if (!isClickInsideMenu && !isClickOnMenuButton) {
-        section_menu.classList.add('hidden-menu');
-        menuButton.classList.remove('open');
-        overlay.classList.add('visible');
-    }
+const footer = document.querySelector('footer');
+const buttonFooterOpener = document.querySelector('.button-footer-opener');
+
+let toggleLock = false;
+
+buttonHalfCircle.addEventListener('click', () => {
+    footer.classList.toggle('footer-added');
+    setTimeout(() => {
+        footer.classList.toggle('footer-added');
+    }, 1000);
+    
 });
 
-window.addEventListener('scroll', function () {
-    if (section_menu.classList.contains('hidden-menu')) {
-        return; // Om menyn är dold behöver vi inte göra något vid scrollning
-    }
+menuButton.addEventListener('click', () => {
+    menuDropdown.classList.toggle("menu-open");
+    });
 
-    section_menu.classList.add('hidden-menu');
-    menuButton.classList.remove('open');
-    overlay.classList.add('visible');
+articleDish.addEventListener('click', () => {
+    if(!toggleLock){
+        toggleLock = true;
+        
+        if(!buttonHalfCircle.textContent){
+            buttonHalfCircle.classList.toggle('button-half-circle-open');
+            setTimeout(() => {      
+                buttonHalfCircle.textContent = "Lägg till +";  
+                toggleLock = false;            
+            }, 1000);        
+        } else {
+            buttonHalfCircle.textContent = "";
+            buttonHalfCircle.classList.toggle('button-half-circle-open');
+            setTimeout(() => {        
+                toggleLock = false;            
+            }, 1000);        
+        }
+    } 
+    return;      
 });
-}
 
-
-function toggleSubMenu(link) {
-    const submenuId = link.getAttribute('data-submenu');
-    const subMenu = document.getElementById(submenuId);
-
-    if (subMenu) {
-        const otherSubmenus = document.querySelectorAll('.sub-navigation:not(#' + submenuId + ')');
-        otherSubmenus.forEach(function (submenu) {
-        submenu.classList.add('hidden-sub');
-        });
-
-        subMenu.classList.toggle('hidden-sub');
+buttonFooterOpener.addEventListener('click', () => {
+    if(buttonFooterOpener.innerText === "Se beställning"){
+        
+        footer.classList.toggle('footer-open');
+        setTimeout(() => {        
+            buttonFooterOpener.innerText = "Tillbaka";  
+            buttonFooterOpener.style.backgroundColor = "#FFCB47";
+            buttonFooterOpener.style.color = "#2C4251";
+        }, 1000);        
+    } else{
+        
+        footer.classList.toggle('footer-open');
+        setTimeout(() => {        
+            buttonFooterOpener.innerText = "Se beställning";   
+            buttonFooterOpener.style.backgroundColor = "#2C4251";
+            buttonFooterOpener.style.color = "#FFCB47";         
+        }, 1000);        
+        
     }
-}
+    
+});
