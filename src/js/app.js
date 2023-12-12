@@ -2,31 +2,15 @@
 const menuDropdown = document.querySelector('menu');
 const menuButton = document.querySelector('.menu-button');
 
-//Stänger meny om man klickar utanför
-document.addEventListener('click', (event) => {
-    const isMenuClicked = menuButton.contains(event.target) || menuDropdown.contains(event.target);
-
-    // Kolla om klicket var utanför menyn och knappen
-    if (!isMenuClicked) {
-        // Stäng menyn genom att ta bort "menu-open" klassen
-        menuDropdown.classList.remove("menu-open");
-    }
-});
-
-//Stänger meny om man scrollar
-document.addEventListener('scroll', () => {
-    // Stäng menyn genom att ta bort "menu-open" klassen
-    menuDropdown.classList.remove("menu-open");
-});
-
-//Dropdown meny - 
+//Dropdown meny ----------
 let sectionContent = document.querySelectorAll('.section-content');
 let linksMenu = document.querySelectorAll('.a-menu');
 
 for(let i = 0; i < linksMenu.length; i++){
     linksMenu[i].addEventListener('click', () => {
 
-        
+        //Ändrad, använder ghetto-functioner för tillfället
+        //Tar bort hide på kort som klickas/ Lägger till hide på resten
         // for(let j = 0; j < linksMenu.length; j++){
         //     if(linksMenu[i] === linksMenu[j]){
         //         sectionContent[j].classList.remove('hide');
@@ -40,6 +24,25 @@ for(let i = 0; i < linksMenu.length; i++){
 
     });
 }
+
+//Stänger dropdown meny om man klickar utanför
+document.addEventListener('click', (event) => {
+    const isMenuClicked = menuButton.contains(event.target) || menuDropdown.contains(event.target);
+
+    // Kolla om klicket var utanför menyn och knappen
+    if (!isMenuClicked) {
+        // Stäng menyn genom att ta bort "menu-open" klassen
+        menuDropdown.classList.remove("menu-open");
+    }
+});
+
+//Stänger dropdown meny om man scrollar
+document.addEventListener('scroll', () => {
+    // Stäng menyn genom att ta bort "menu-open" klassen
+    menuDropdown.classList.remove("menu-open");
+});
+
+
 
 const articleDish = document.querySelector('.article-dish');
 const buttonHalfCircle = document.querySelector('.button-half-circle');
@@ -104,7 +107,7 @@ buttonFooterOpener.addEventListener('click', () => {
     
 });
 
-
+//Ändrar title i header
 function changeFigureLogoText(newText) {
     const figureLogo = document.querySelector('.figure-logo');
     if (figureLogo) {
