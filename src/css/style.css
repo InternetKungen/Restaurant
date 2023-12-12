@@ -123,34 +123,43 @@ header {
 	min-height: 10vh;
   max-height: 13vh;
   border-bottom: 1px solid var(--menu-a-color);
+  display: flex;
+  flex-direction: row;
 }
 
 nav {
 	background-color: var(--nav-bg-color);
-	width: 100%;
+	width: 30%;
 	height: 10vh;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
 	position: relative;
-}
+  display: flex;
+  padding-left: var(--padding);
 
+}
+.figure-logo {
+  width: 70vw;
+  height: 10vh;
+  color: var(--figure-logo-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  background-color: var(--menu-bg-color);
+  text-align: center;
+  padding: var(--padding);
+}
 .menu-button {
+  margin-left: var(--padding);
 	outline: none;
 	border: 0;
 	background: transparent;
 	cursor: pointer;
-	display: inline;
 }
 
 .menu-icon {
-	margin: auto;
 	cursor: pointer;
 	outline: none;
 	border: 0;
 	font-size: 3rem;
   color: var(--menu-icon);
-
 }
 
 menu {
@@ -159,7 +168,7 @@ menu {
 	top: 100%;
 	left: 0;
 	list-style: none;
-	width: 100%;
+	width: 100vw;
 	height: 90vh;
   flex-direction: column;
 	justify-content: stretch;  
@@ -169,6 +178,7 @@ menu {
 
 
 menu li {
+  height: 18vh;
 	flex-grow: 1;
 	display: inline-block;
 	font-size: 3rem;
@@ -192,11 +202,7 @@ menu a {
 	display: flex;
 }
 
-.figure-logo {
-  color: var(--figure-logo-color);
-  font-family: 'Roboto', sans-serif;
-  font-size: 2.5rem;
-}
+
 .section-filter {
   background-color: var(--nav-bg-color);
   overflow: hidden;
