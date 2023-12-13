@@ -1,3 +1,5 @@
+
+/* Roots-variabler,  */
 :root { 
 	--padding: calc(8px + 1.5625vw);		
 	--font: calc(15px + 0.390625vw);	
@@ -80,7 +82,6 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-
 }
 
 body {
@@ -91,7 +92,6 @@ body {
 	height: 100%;
 	overflow-y: auto;
   overflow-x: hidden;
-
 }
 
 a {
@@ -116,15 +116,14 @@ a:hover {
 }
 a:active {
 	text-decoration: none;
-	
 }
+/* **************************** HEADER ************************************* */
+
 header {
 	width: 100%;
 	min-height: 10vh;
   max-height: 13vh;
   border-bottom: 1px solid var(--menu-a-color);
-  display: flex;
-  flex-direction: row;
 }
 
 nav {
@@ -134,8 +133,15 @@ nav {
 	position: relative;
   display: flex;
   padding-left: var(--padding);
-
 }
+
+/* Container för nav och figure(logotyp) */
+.section-header {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Logotyp */
 .figure-logo {
   width: 70vw;
   height: 10vh;
@@ -146,6 +152,8 @@ nav {
   text-align: center;
   padding: var(--padding);
 }
+
+/* Knapp för hamburgermenyn */
 .menu-button {
   margin-left: var(--padding);
 	outline: none;
@@ -154,6 +162,7 @@ nav {
 	cursor: pointer;
 }
 
+/* Hamburgerikon */
 .menu-icon {
 	cursor: pointer;
 	outline: none;
@@ -162,47 +171,66 @@ nav {
   color: var(--menu-icon);
 }
 
+/* Dropdownmenyn */
 menu {
 	display: none;
+  flex-direction: column;
+	justify-content: stretch;  
 	position: absolute;
 	top: 100%;
 	left: 0;
+
+  /* width: 100vw;
+	height: 90vh; */
+
+  width: 75vw;
+  border: 1px solid var(--h3-dish-color);
+
+
 	list-style: none;
-	width: 100vw;
-	height: 90vh;
-  flex-direction: column;
-	justify-content: stretch;  
   overflow: hidden;
   z-index: 20;
 }
 
-
+/* Menyns rader */
 menu li {
-  height: 18vh;
-	flex-grow: 1;
+  flex-grow: 1;
 	display: inline-block;
-	font-size: 3rem;
-	border-bottom: 2px solid var(--menu-li-border);
+  border-bottom: 1px solid var(--menu-li-border);
 	background-color: var(--menu-bg-color);
+
+  /* height: 18vh;
+	font-size: 3rem; */
+
 }
-menu li:nth-child(1) {
-	border-top: 2px solid var(--menu-li-border);
+menu li:nth-child(5) {
+	border-bottom: 0;
 }
+
+/* Länkarna i dropdownmenyn */
 menu a {
-	font-size: 2rem;
 	display: block;
 	width: 100%;
 	height: 100%;
-	padding: 3.7rem;
-	font-family: 'Roboto', sans-serif;
   color: var(--menu-a-color);
+  font-family: 'Roboto', sans-serif;
+	
+  font-size: 1.7rem;
+  padding: var(--padding);
+  /* font-size: 2rem;
+  padding: 3.7rem; */
+	
+  
+  
+
 
 }
+/* Visar dropdownmenyn */
 .menu-open {
 	display: flex;
 }
 
-
+/* Section - container för filter till menyn/matsedeln */
 .section-filter {
   background-color: var(--nav-bg-color);
   overflow: hidden;
@@ -212,9 +240,8 @@ menu a {
   flex-direction: row;
   justify-content: space-evenly;
   align-content: center;
- 
-  
 }
+/* Button - till filter */
 .button-filter {
   height: 3vh;
   flex-grow: 1;
@@ -229,12 +256,11 @@ menu a {
   transition: all 0.2s ease;
 }
 .button-filter:nth-child(3) {
-  border-right: 1px solid var(--h3-dish-color);
-  
+  border-right: 1px solid var(--h3-dish-color); 
 }
 
 
-
+/* ************************************ MAIN ******************************************** */
 main {
   padding: var(--padding);
   width: 100%;
@@ -244,6 +270,7 @@ main {
   overflow-y: auto;
 }
 
+/* h1 - huvudrubrik till de olika sidorna */
 .h1-dish {
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
@@ -253,25 +280,27 @@ main {
   padding: var(--padding);
   margin-bottom: var(--padding);
   border: 1px solid var(--menu-a-color);
-
 }
+
+/* Article - menyobjekten på första sidan(dagens) och meny-sidan */
 .article-dish {
   background-color: var(--article-dish-bg);
   margin-bottom: var(--padding);
-
 }
 
-.figure-dish {
-  margin-bottom: var(--padding);
-}
+/* Img - Bild på maträtt  */
 .img-dish {
   width: 100%;
+  margin-bottom: var(--padding);
 }
+/* Span - container för "lägg till"-knapp och maträttens namn */
 .span-dish {
   display: flex;
   width: 100%;
 }
-.button-half-circle {
+
+/* Button - "lägg till"-knappen */
+.button-article-add {
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
   background-color: var(--button-halfcircle-bg);
@@ -284,13 +313,12 @@ main {
   transition: width 1s ease-in-out;
   
 }
-.button-half-circle-open {
-  background-color: var(--button-halfcircle-bg);
-  border-radius: 0 2rem 2rem 0;
-  color: var(--button-halfcircle-color);
-  height: 4rem;
+/* Klass för att toggla - expanderar "lägg till"-knappen */
+.button-article-add-open {
   width: 50%;
 }
+
+/* h3 - Maträttens namn */
 .h3-dish {
   font-family: 'Roboto', sans-serif;
   color: var(--h3-dish-color);
@@ -298,43 +326,50 @@ main {
   display: inline;
   font-weight: 400;
 }
+/* P - beskrivning av maträtten */
 .p-dish {
   font-family: 'Roboto', sans-serif;
   color: var(--p-dish-color);
-
   padding: var(--padding);
 }
 
+
+/* **************************** FOOTER **************************** */
 footer {
-  position: fixed;
-  top: 90vh;
-  background: var(--menu-bg-color);
-  width: 100%;
-  height: 90vh;
-  transition: all 1s ease-in-out;
-  border-top: 1px solid var(--menu-a-color);
   display: flex;
   flex-direction: column; 
   justify-content: space-between;
+  position: fixed;
+  top: 90vh;
+  width: 100%;
+  height: 90vh;
+  background-color: var(--menu-bg-color);
+  border-top: 1px solid var(--menu-a-color);
   z-index: 15;
+  transition: all 1s ease-in-out;
 }
+
+/* Klass för att toggla expansion av footern */
 .footer-open {
   top: 10vh;
 }
+
+/* Klass för att visa att maträtt lagts till i beställning */
 .footer-added {
   background-color: #8AA1B1;
 }
 
+/* Section - container för den synliga delen av footern */
 .section-footer {
-  width: 100%;
-  height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
+  height: 10vh;
   padding: var(--padding);
-
 }
+/* h3 - "Valda maträtter" */
 .h3-footer {
   width: 40vw;
   height: 8vh;
@@ -343,6 +378,7 @@ footer {
   color: var(--h3-dish-color);
   font-weight: 400;
 }
+/* Span - visar antalet tillagda maträtter */
 .span-footer-dishes {
   height: 8vh;
   width: 20vw;
@@ -352,6 +388,7 @@ footer {
   font-weight: 400;
 }
 
+/* Button - expanderar footern */
 .button-footer-opener {
   width: 30vw;
   height: 6vh;
@@ -361,17 +398,20 @@ footer {
   font-family: 'Roboto', sans-serif;
 }
 
+/* Section - container för att visa beställning */
 .section-footer-order {
   width: 100%;
   padding: var(--padding);
 }
 
+/* Ul - lista för att vias valda maträtter */
 .ul-footer-order {
   width: 100%;
   list-style: none;
-  padding: var(--padding);
-  
+  padding: var(--padding); 
 }
+
+/* li - listans rader, container för radinnehållet */
 .li-order {
   width: 100%;
   color: var(--h3-dish-color);
@@ -381,37 +421,33 @@ footer {
   justify-content: space-between;
   padding: 1.3rem;
   border-bottom: 1px solid var(--nav-text-color);
-  
 }
 .li-order:nth-child(1) {
   border-top: 1px solid var(--nav-text-color);
 }
 
+/* Span - visar namnet på vald maträtt */
 .span-footer-itemname {
   width: 45%;
   font-size: 0.9rem;
 }
+
+/* span - visar antal tillagda av maträtt */
 .span-footer-numberofitem {
   width: 10%;
   font-size: 0.9rem;
 }
 
+/* Span - container för "lägg till"- & "ta bort"-knapparna */
 .span-footer-buttons {
   width: 45%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  
 }
 
-.button-order-add {
-  width: 45%;
-  color: var(--button-halfcircle-bg);
-  background-color: var(--menu-bg-color);
-  border: 1px solid var(--button-halfcircle-bg);
-  font-size: 0.7rem;
-}
-.button-order-remove {
+/* Button - "lägg till"- & "ta bort"-knapp */
+.button-footer-order {
   width: 45%;
   color: var(--button-halfcircle-bg);
   background-color: var(--menu-bg-color);
@@ -419,6 +455,7 @@ footer {
   font-size: 0.7rem;
 }
 
+/* Section - container, längst ner.  */
 .section-footer-submitorder {
   width: 100%;
   height: 20vh;
@@ -426,7 +463,9 @@ footer {
   text-align: center;
 
 }
-.button-submitorder {
+
+/* Button - knapp för att lägga beställning */
+.button-footer-submitorder {
   width: 40%;
   font-size: 1.3rem;
   color: var(--h3-dish-color);
@@ -435,6 +474,7 @@ footer {
   padding: var(--padding);
 }
 
+/* Klass för att toggla olika element att döljas/visas */
 .hide {
   display: none;
 }
