@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
     <script src="./src/js/app.js" defer></script>
+    <script src="./src/js/scrollToHeader.js" defer></script>
   </head>
   <body>
     <!------------------------------ Header ------------------------------>
@@ -38,12 +39,15 @@
         </nav>
 
         <!-- Logotyp -->
-        <a href="#"><img id="restaurant-logo" src="./src/img/bbq-logo-black.png" alt="Logo"></a>
+        <a onclick="scrollToElement('scroll-to-top')"><img id="restaurant-logo" src="./src/img/bbq-logo-black.png" alt="Logo"></a>
       </section>
     </header>
-
+    
     <!-- Main - de olika sections är de olika sidorna t.ex. hem, meny, kontakt mm.  -->
+    
     <main>
+      <!-- Anchor to scroll the pages to the top when the logo is clicked -->
+      <div id="scroll-to-top"></div>
       <!-- Section för första sidan, Hem. Där visas "featured food and beverages"/dagens -->
       <section class="section-dagens section-content">
         <h1 class="h1-dish">Dagens special</h1>
@@ -191,6 +195,7 @@
     </main>
 
     <!-- Footer - container för beställning/varukorg -->
+    
     <footer>
       <!-- Section - container för den del av footern som alltid är synlig -->
       <section class="section-footer">
