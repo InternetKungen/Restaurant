@@ -156,7 +156,45 @@ function menuAndFooterOpeners(){
 }
 
 
+//Bildspel - Om oss
+// const imgContainer = document.querySelector('.section-om-oss__picture-scroller__img-container');
+const aboutArticles = document.querySelectorAll('.section-om-oss__picture-scroller__article');
+let currentIndex = 0;
+let intervalId;
 
+function changeImageDirectionPre(direction) {
+    clearInterval(intervalId);
+    changeImage(direction);
+}
+
+function changeImage(direction) {
+  currentIndex += direction;
+
+  if (currentIndex < 0) {
+    currentIndex = aboutArticles.length - 1;
+  } else if (currentIndex >= aboutArticles.length) {
+    currentIndex = 0;
+  }
+
+  updateImage();
+}
+
+function updateImage() {
+  aboutArticles.forEach((img, index) => {
+    img.classList.toggle('hide', index !== currentIndex);
+  });
+}
+
+function startSlideshow() {
+  intervalId = setInterval(() => {
+    changeImage(1);
+  }, 5000); // Change image every 2 seconds (adjust as needed)
+}
+
+function stopSlideshow() {
+  clearInterval(intervalId);
+}
+//-------------------------------------
 
 setDropdownMenu();
 setArticlesDish(articleDagens, buttonArticleAddDagens);

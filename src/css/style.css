@@ -416,3 +416,90 @@ footer {
 .hide {
   display: none;
 }
+
+.section-om-oss__picture-scroller {
+  padding-bottom: 10px;
+}
+
+.section-om-oss__picture-scroller__article-container {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  /* background: green; */
+  background-color: var(--black);
+  /* margin-bottom: var(--padding); */
+  /* padding: var(--padding); */
+  border: 1px solid var(--red);
+  height: 350px;
+  width: 100%;
+}
+
+.section-om-oss__picture-scroller__article {
+  width: 95vw;
+  animation: section-om-oss__picture-scroller__article__fade-in 1s ease 1;
+  position: relative;
+
+}
+
+@keyframes section-om-oss__picture-scroller__article__fade-in {
+  0% {
+    opacity: 0;
+    right: -100vw;
+  }
+  100% {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+.section-om-oss__picture-scroller__article__img-container {
+  width: 100%; /* Sätt bredden på containern till 100% av dess förälderelement */
+  height: 80%; /* Sätt höjden på containern till 100% av dess förälderelement */
+  position: relative; /* Gör containerns position relativ så att vi kan använda absolut position för bilden */
+  overflow: hidden; /* Dölj överflödiga delar av bilden som är utanför containern */
+}
+
+
+.section-om-oss__picture-scroller__article p {
+color: white;
+border-top: 1px solid var(--red);
+opacity: 0;
+animation: section-om-oss__picture-scroller__article__fade-in 2s ease 1;
+animation-delay: 0.5s;
+animation-fill-mode: forwards;
+padding: 10px;
+/* width: 110vw; */
+}
+
+
+.section-om-oss__picture-scroller__article__img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  padding: 10px;
+}
+
+.section-om-oss__information {
+  background-color: var(--black);
+  margin-bottom: var(--padding);
+  border: 1px solid var(--red);
+}
+.section-om-oss__information p {
+  font-size: large;
+  color: blanchedalmond;
+}
+.p-om-oss {
+  color: var(--white);
+  padding: var(--padding);
+}
+.h3-om-oss {
+  color: var(--red);
+  padding: var(--padding);
+  display: inline;
+  font-weight: 400;
+  max-width: 50%;
+  height: 2rem;
+}

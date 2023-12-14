@@ -162,13 +162,69 @@
       <!-- Section - Om Oss - container för det som ska visas på kontakt-sidan -->
       <section class="section-content section-om-oss hide">
         Om oss
+        <!--BILDSPEL/SCROLLER-->
         <section class="section-om-oss__picture-scroller">
-          <article>
-            <div class="section-om-oss__picture-scroller__button-container">
-              <button></button>
-            </div>
-            <img src="src/img/got.jpg" />
-          </article>
+          <div class="section-om-oss__picture-scroller__button-container">
+            <button
+              class="section-om-oss__picture-scroller__button-left"
+              onclick="changeImageDirectionPre(-1)"
+            >
+              LEFT
+            </button>
+            <button
+              class="section-om-oss__picture-scroller__button-right"
+              onclick="changeImageDirectionPre(1)"
+            >
+              RIGHT
+            </button>
+            <button
+              class="section-om-oss__picture-scroller__button-play"
+              onclick="startSlideshow()"
+            >
+              PLAY
+            </button>
+            <button
+              class="section-om-oss__picture-scroller__button-stop"
+              onclick="stopSlideshow()"
+            >
+              STOP
+            </button>
+          </div>
+          <!--ARTIKLAR TILL BILDSPELET-->
+          <section class="section-om-oss__picture-scroller__article-container">
+            <article class="section-om-oss__picture-scroller__article">
+              <figure
+                class="section-om-oss__picture-scroller__article__img-container"
+              >
+                <img src="src/img/got.jpg" alt="something" />
+              </figure>
+              <p>En beskrivande text</p>
+            </article>
+
+            <article class="section-om-oss__picture-scroller__article hide">
+              <figure
+                class="section-om-oss__picture-scroller__article__img-container"
+              >
+                <img src="src/img/pizza.jpg" alt="something pizza" />
+              </figure>
+              <p>En annan beskrivning</p>
+            </article>
+          </section>
+        </section>
+
+        <section class="section-om-oss__information">
+          <h3 class="h3-om-oss">Om oss</h3>
+          <p class="p-om-oss">
+            Välkommen till Taverna! Vår passion är att skapa en autentisk
+            BBQ-upplevelse, där varje måltid är en hyllning till rökiga smaker
+            och traditionella tillagningsmetoder. Vårt kök är fyllt av en
+            blandning av hemligheter och kärlek till konsten att grilla. Oavsett
+            om du älskar saftiga revben, långsamt tillagad pulled pork eller
+            smakrik brisket, kommer du att uppleva äkta värme i varje tugga. På
+            Taverna handlar det inte bara om mat; det handlar om gemenskap,
+            glädje och en smakresa genom BBQ-traditioner. Vi ser fram emot att
+            välkomna dig till vårt bord och dela dessa smakupplevelser med dig.
+          </p>
         </section>
       </section>
     </main>
