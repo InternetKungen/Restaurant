@@ -194,6 +194,20 @@ function startSlideshow() {
 function stopSlideshow() {
   clearInterval(intervalId);
 }
+
+let isPlaying = false;
+
+function togglePlayStop(button) {
+  isPlaying = !isPlaying;
+
+  if (isPlaying) {
+    startSlideshow();
+    button.innerHTML = '<img src="./src/img/stop.png" alt="Stop" />';
+  } else {
+    stopSlideshow();
+    button.innerHTML = '<img src="./src/img/play.png" alt="Play" />';
+  }
+}
 //-------------------------------------
 
 setDropdownMenu();
