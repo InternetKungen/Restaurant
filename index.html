@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
     <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/contact.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,9 +57,7 @@
           <!-- Span - container för "lägg till"-knappen och namnet på maträtten -->
           <span class="span-dish">
             <!-- Button - lägg till maträtt till beställning -->
-            <button
-              class="button-article-add button-article-add-dagens"
-            ></button>
+            <button class="button-article-add button-article-add-dagens"></button>
 
             <!-- h3 - namnet på maträtten -->
             <h3 class="h3-dish">Pizza Frontend</h3>
@@ -66,9 +65,8 @@
 
           <!-- p - beskrivning av maträtt -->
           <p class="p-dish">
-            En fantastiskt god pizza bakad i stenugn med en enbart de bästa
-            ingredienser, färska variabler, snabba loopar och ett smaskigt
-            gränssnitt.
+            En fantastiskt god pizza bakad i stenugn med en enbart de bästa ingredienser, färska
+            variabler, snabba loopar och ett smaskigt gränssnitt.
           </p>
         </article>
 
@@ -80,9 +78,7 @@
           <!-- Span - container för "lägg till"-knappen och namnet på maträtten -->
           <span class="span-dish">
             <!-- Button - "lägg till"-knapp -->
-            <button
-              class="button-article-add button-article-add-dagens"
-            ></button>
+            <button class="button-article-add button-article-add-dagens"></button>
 
             <!-- h3 - namnet på maträtten -->
             <h3 class="h3-dish">Gin & Tonic</h3>
@@ -121,9 +117,8 @@
 
           <!-- p - beskrivning av maträtt -->
           <p class="p-dish">
-            En fantastiskt god pizza bakad i stenugn med en enbart de bästa
-            ingredienser, färska variabler, snabba loopar och ett smaskigt
-            gränssnitt.
+            En fantastiskt god pizza bakad i stenugn med en enbart de bästa ingredienser, färska
+            variabler, snabba loopar och ett smaskigt gränssnitt.
           </p>
 
           <!-- P - priset -->
@@ -155,8 +150,48 @@
       <!-- Section - Boka bord - container för det som ska visas på boka bord-sidan -->
       <section class="section-content section-boka hide">Boka bord</section>
 
-      <!-- Section - Kontakt - container för det som ska visas på kontakt-sidan -->
-      <section class="section-content section-kontakt hide">Kontakt</section>
+      <!------------------------------ Kontakt ------------------------------>
+
+      <section class="section-content section-kontakt hide">
+        <!-- Kontaktformulär -->
+        <h2>Kontakta oss</h2>
+        <form action="action_page.php">
+          <label for="fname">Förnamn</label>
+          <input type="text" id="fname" name="firstname" placeholder="Förnamn..." />
+
+          <label for="lname">Efternamn</label>
+          <input type="text" id="lname" name="lastname" placeholder="Efternamn..." />
+
+          <label for="email">E-post</label>
+          <input type="email" id="email" placeholder="example@mail.com"></input>
+
+
+          <label for="subject">Meddelande</label>
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="Meddelande..."
+            style="height: 200px"
+          ></textarea>
+
+          <input type="submit" value="Skicka" />
+        </form>
+        <!-- Kontakt info -->
+        <div>
+          <div class="contact-info">
+            <div class="contact-details">
+              <p>Kungsgatan 4</p>
+              <p><a href="tel:+46701234567">+46 70 123 45 67</a></p>
+              <p><a href="info@restaurangtaverna.se">info@restaurangtaverna.se</a></p>
+            </div>
+            <div class="opening-hours">
+              <p>Öppettider</p>
+              <p>Mån - Ons:<span> 10.00 - 19.00</span></p>
+              <p>Lör - Sön:<span> 11.00 - 20.00</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer - container för beställning/varukorg -->
@@ -188,13 +223,9 @@
             <!-- Span - container för "lägg till"/"ta bort-knappar" -->
             <span class="span-footer-buttons">
               <!-- Button - knappar för att lägga till/ta bort antal av en maträtt -->
-              <button class="button-footer-order button-footer-order-add">
-                Lägg till
-              </button>
+              <button class="button-footer-order button-footer-order-add">Lägg till</button>
 
-              <button class="button-footer-order button-footer-order-remove">
-                Ta bort
-              </button>
+              <button class="button-footer-order button-footer-order-remove">Ta bort</button>
             </span>
           </li>
 
@@ -205,13 +236,9 @@
             <span class="span-footer-numberofitem"> 1 </span>
 
             <span class="span-footer-buttons">
-              <button class="button-footer-order button-footer-order-add">
-                Lägg till
-              </button>
+              <button class="button-footer-order button-footer-order-add">Lägg till</button>
 
-              <button class="button-footer-order button-footer-order-remove">
-                Ta bort
-              </button>
+              <button class="button-footer-order button-footer-order-remove">Ta bort</button>
             </span>
           </li>
         </ul>
