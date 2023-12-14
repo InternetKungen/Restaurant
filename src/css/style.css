@@ -140,7 +140,7 @@ menu li {
   border-bottom: 1px solid var(--black);
 	background-color: var(--red);
 }
-menu li:nth-child(5) {
+menu li:nth-child(6) {
 	border-bottom: 0;
 }
 
