@@ -4,76 +4,40 @@
 	--padding: calc(8px + 1.5625vw);		
 	--font: calc(15px + 0.390625vw);	
 
-/*
-  
-  --body-bg: #2C3B47;
-  
-  --nav-bg-color: #1F2428;
-  --nav-text-color: #2C3B47; 
-  --menu-icon: #294F6D;
-  --menu-bg-color: #294F6D;
-  --menu-li-border: #2C3B47;
-  --menu-a-color: #1F2428;
-  --figure-logo-color: #2C3B47;
-
-  --p-dagens-bg: #096DBA;
-  --article-dish-bg: #294F6D;
-  --p-dish-color: #1F2428;
-  --h1-dish-color: #1F2428;
-  --h1-dish-bg: #145B92;
-  --h3-dish-color: #2C3B47;
-
-  --button-halfcircle-bg: #096DBA;
-  --button-halfcircle-color: #2C3B47;
 
 
- 
- --body-bg: #F0EEEA;
-  
- --nav-bg-color: #AA8439;
- --nav-text-color: #2C3B47; 
- --menu-icon: #644200;
- --menu-bg-color: #F0EEEA;
- --menu-li-border: #AA8439;
- --menu-a-color: #AA8439;
- --figure-logo-color: #644200;
+--red: #F04245;
+--black: #0A0A0A; 
+--white: #F3F7F3;
 
- --p-dagens-bg: #644200;
- --p-dagens-color: #F0EEEA;
- --article-dish-bg: #CDB586;
- --p-dish-color: #875B02;
- --h1-dish-color: #F0EEEA;
- --h1-dish-bg: #AA8439;
- --h3-dish-color: #AA8439;
-
- --button-halfcircle-bg: #AA8439;
- --button-halfcircle-color: #F0EEEA;
-
- --footer-bg: #CDB586;
- */
-
- --body-bg: #8AA1B1;
-  
- --nav-bg-color: #2C4251;
- --nav-text-color: #8AA1B1; 
- --menu-icon: #FFCB47;
- --menu-bg-color: #2C4251;
- --menu-li-border: #FFCB47;
- --menu-a-color: #FFCB47;
+ --body-bg: #0A0A0A;
+ --nav-bg-color: #0A0A0A;
+ --nav-text-color: #F04245; 
+ --menu-icon: #F04245;
+ --menu-bg-color: #F04245;
+ --menu-li-border: #0A0A0A;
+ --menu-a-color: #0A0A0A;
  --figure-logo-color: #8AA1B1;
 
  --p-dagens-bg: #2C4251;
  --p-dagens-color: #2C4251;
- --article-dish-bg: #2C4251;
- --p-dish-color: #8AA1B1;
- --h1-dish-color: #8AA1B1;
- --h1-dish-bg: #2C4251;
- --h3-dish-color: #FFCB47;
+ --article-dish-bg: #0A0A0A;
+ --p-dish-color: #F3F7F3;
+ --h1-dish-color: #0A0A0A;
+ --h1-dish-bg: #0A0A0A;
+ --h3-dish-color: #F04245;
 
- --button-halfcircle-bg: #FFCB47;
+ --button-halfcircle-bg: #F04245;
  --button-halfcircle-color: #2C4251;
 
- --footer-bg: #2C4251;
+ --footer-bg: #0A0A0A;
+
+ --border-color: #F04245;
+
+
+--red: #F04245;
+--black: #0A0A0A;
+--white: #F3F7F3;
 
 
 }
@@ -86,7 +50,8 @@
 
 body {
 	font-size: var(--font);
-	background-color: var(--body-bg);
+  font-family: 'Roboto', sans-serif;
+	background-color: var(--black);
 	color: #282828;
 	width: 100%;
 	height: 100%;
@@ -95,39 +60,20 @@ body {
 }
 
 a {
-	text-decoration: none;
-	color: #793C00;
+  text-decoration: none;
+  &:focus {
+    outline: 2px solid #9999FF;
+  }
 }
-a:link {
-	text-decoration: none;
-
-}
-a:visited {
-	text-decoration: none;
-	
-}
-a:focus {
-	outline: 2px solid #9999FF;
-	
-}
-a:hover {
-	text-decoration: none;
-	
-}
-a:active {
-	text-decoration: none;
-}
-/* **************************** HEADER ************************************* */
 
 header {
 	width: 100%;
-	min-height: 10vh;
-  max-height: 13vh;
-  border-bottom: 1px solid var(--menu-a-color);
+	height: 10vh;
+  border-bottom: 1px solid var(--red);
 }
 
 nav {
-	background-color: var(--nav-bg-color);
+	background-color: var(--black);
 	width: 30%;
 	height: 10vh;
 	position: relative;
@@ -145,10 +91,9 @@ nav {
 .figure-logo {
   width: 70vw;
   height: 10vh;
-  color: var(--figure-logo-color);
-  font-family: 'Roboto', sans-serif;
+  color: var(--white);
   font-size: 2.5rem;
-  background-color: var(--menu-bg-color);
+  background-color: var(--black);
   text-align: center;
   padding: var(--padding);
 }
@@ -168,7 +113,7 @@ nav {
 	outline: none;
 	border: 0;
 	font-size: 3rem;
-  color: var(--menu-icon);
+  color: var(--red);
 }
 
 /* Dropdownmenyn */
@@ -179,12 +124,8 @@ menu {
 	position: absolute;
 	top: 100%;
 	left: 0;
-
-  /* width: 100vw;
-	height: 90vh; */
-
   width: 75vw;
-  border: 1px solid var(--h3-dish-color);
+  border: 1px solid var(--black);
 
 
 	list-style: none;
@@ -196,12 +137,8 @@ menu {
 menu li {
   flex-grow: 1;
 	display: inline-block;
-  border-bottom: 1px solid var(--menu-li-border);
-	background-color: var(--menu-bg-color);
-
-  /* height: 18vh;
-	font-size: 3rem; */
-
+  border-bottom: 1px solid var(--black);
+	background-color: var(--red);
 }
 menu li:nth-child(5) {
 	border-bottom: 0;
@@ -212,17 +149,9 @@ menu a {
 	display: block;
 	width: 100%;
 	height: 100%;
-  color: var(--menu-a-color);
-  font-family: 'Roboto', sans-serif;
-	
+  color: var(--black);	
   font-size: 1.7rem;
   padding: var(--padding);
-  /* font-size: 2rem;
-  padding: 3.7rem; */
-	
-  
-  
-
 
 }
 /* Visar dropdownmenyn */
@@ -230,33 +159,25 @@ menu a {
 	display: flex;
 }
 
-/* Section - container för filter till menyn/matsedeln */
-.section-filter {
-  background-color: var(--nav-bg-color);
-  overflow: hidden;
-  width: 100%;
-  height: 3vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-content: center;
-}
 /* Button - till filter */
 .button-filter {
   height: 3vh;
   flex-grow: 1;
   text-align: center;
-  background-color: var(--menu-bg-color);
-  color: var(--h3-dish-color);
-  font-family: 'Roboto', sans-serif;
-  border-top: 1px solid var(--h3-dish-color);
-  border-bottom: 1px solid var(--h3-dish-color);
-  border-left: 1px solid var(--h3-dish-color);
+  background-color:var(--black);
+  color: var(--red);
+  border-top: 1px solid var(--red);
+  border-bottom: 1px solid var(--red);
+  border-left: 1px solid var(--red);
   border-right: 0;
   transition: all 0.2s ease;
 }
-.button-filter:nth-child(3) {
-  border-right: 1px solid var(--h3-dish-color); 
+.button-filter:nth-child(4) {
+  border-right: 1px solid var(--red); 
+}
+.button-filter-active {
+  color: var(--black);
+  background-color: var(--red);
 }
 
 
@@ -272,20 +193,35 @@ main {
 
 /* h1 - huvudrubrik till de olika sidorna */
 .h1-dish {
-  font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
-  background-color:  var(--h1-dish-bg);
-  color: var(--h1-dish-color);
+  background-color:  var(--black);
+  color: var(--red);
   padding: var(--padding);
   margin-bottom: var(--padding);
-  border: 1px solid var(--menu-a-color);
+  border: 1px solid var(--red);
 }
 
 /* Article - menyobjekten på första sidan(dagens) och meny-sidan */
 .article-dish {
-  background-color: var(--article-dish-bg);
+  background-color: var(--black);
   margin-bottom: var(--padding);
+  border: 1px solid var(--red);
+}
+
+.p-article-originandrate {
+  height: 2rem;
+  padding: 0.5rem;
+}
+.span-p-origin {
+  font-size: 1rem;
+  color: var(--red);
+  float: left;
+}
+.span-p-rate {
+  font-size: 1rem;
+  color: var(--red);
+  float: right;
 }
 
 /* Img - Bild på maträtt  */
@@ -301,10 +237,9 @@ main {
 
 /* Button - "lägg till"-knappen */
 .button-article-add {
-  font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
-  background-color: var(--button-halfcircle-bg);
-  color: var(--button-halfcircle-color);
+  background-color: var(--red);
+  color: var(--white);
   height: 4rem;
   width: 2rem;
   padding: var(--padding);
@@ -320,16 +255,22 @@ main {
 
 /* h3 - Maträttens namn */
 .h3-dish {
-  font-family: 'Roboto', sans-serif;
-  color: var(--h3-dish-color);
+  color: var(--red);
   padding: var(--padding);
   display: inline;
   font-weight: 400;
+  max-width: 50%;
+  height: 2rem;
 }
 /* P - beskrivning av maträtten */
 .p-dish {
-  font-family: 'Roboto', sans-serif;
-  color: var(--p-dish-color);
+  color: var(--white);
+  padding: var(--padding);
+}
+.p-price {
+  color: var(--red);
+  font-size: 1.5rem;
+  text-align: right;
   padding: var(--padding);
 }
 
@@ -343,8 +284,8 @@ footer {
   top: 90vh;
   width: 100%;
   height: 90vh;
-  background-color: var(--menu-bg-color);
-  border-top: 1px solid var(--menu-a-color);
+  background-color: var(--black);
+  border-top: 1px solid var(--red);
   z-index: 15;
   transition: all 1s ease-in-out;
 }
@@ -356,7 +297,7 @@ footer {
 
 /* Klass för att visa att maträtt lagts till i beställning */
 .footer-added {
-  background-color: #8AA1B1;
+  background-color: var(--white);
 }
 
 /* Section - container för den synliga delen av footern */
@@ -374,8 +315,7 @@ footer {
   width: 40vw;
   height: 8vh;
   line-height: 8vh;
-  font-family: 'Roboto', sans-serif;
-  color: var(--h3-dish-color);
+  color: var(--red);
   font-weight: 400;
 }
 /* Span - visar antalet tillagda maträtter */
@@ -383,8 +323,7 @@ footer {
   height: 8vh;
   width: 20vw;
   line-height: 8vh;
-  font-family: 'Roboto', sans-serif;
-  color: var(--h3-dish-color);
+  color: var(--red);
   font-weight: 400;
 }
 
@@ -392,10 +331,10 @@ footer {
 .button-footer-opener {
   width: 30vw;
   height: 6vh;
-  border: 1px solid var(--h3-dish-color);
-  background-color: var(--menu-bg-color);
-  color: var(--h3-dish-color);
-  font-family: 'Roboto', sans-serif;
+  border: 1px solid var(--red);
+  background-color: var(--black);
+  color: var(--red);
+ 
 }
 
 /* Section - container för att visa beställning */
@@ -414,16 +353,15 @@ footer {
 /* li - listans rader, container för radinnehållet */
 .li-order {
   width: 100%;
-  color: var(--h3-dish-color);
-  font-family: 'Roboto', sans-serif;
+  color: var(--red);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 1.3rem;
-  border-bottom: 1px solid var(--nav-text-color);
+  border-bottom: 1px solid var(--red);
 }
 .li-order:nth-child(1) {
-  border-top: 1px solid var(--nav-text-color);
+  border-top: 1px solid var(--red);
 }
 
 /* Span - visar namnet på vald maträtt */
@@ -449,9 +387,9 @@ footer {
 /* Button - "lägg till"- & "ta bort"-knapp */
 .button-footer-order {
   width: 45%;
-  color: var(--button-halfcircle-bg);
-  background-color: var(--menu-bg-color);
-  border: 1px solid var(--button-halfcircle-bg);
+  color: var(--red);
+  background-color: var(--black);
+  border: 1px solid var(--red);
   font-size: 0.7rem;
 }
 
@@ -468,9 +406,9 @@ footer {
 .button-footer-submitorder {
   width: 40%;
   font-size: 1.3rem;
-  color: var(--h3-dish-color);
-  background-color: var(--menu-bg-color);
-  border: 1px solid var(--h3-dish-color);
+  color: var(--red);
+  background-color: var(--black);
+  border: 1px solid var(--red);
   padding: var(--padding);
 }
 

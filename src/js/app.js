@@ -41,22 +41,45 @@ let toggleLock = false;
 // Funktion - lägger till eventlisteners på länkarna i menyn.
 
 function setDropdownMenu() {
+    // Sätter eventlisteners på menyn
     for(let i = 0; i < linksMenu.length; i++){
         linksMenu[i].addEventListener('click', () => {
+            
             for(let j = 0; j < linksMenu.length; j++){
-                if(linksMenu[i] === linksMenu[j] && i === 1){
+                if(linksMenu[i] === linksMenu[j]){
+                    // Visar vald sida i main
                     sectionContent[j].classList.remove('hide');
-                    sectionFilter.classList.remove('hide');
-
+                    
                 } else if(linksMenu[i] === linksMenu[j]){
+                    // Döljer övriga sidor
                     sectionContent[j].classList.remove('hide');
-                    sectionFilter.classList.add('hide');
+                    
                 } else{
                     sectionContent[j].classList.add('hide');
                 }
             }
+            //Stänger menyn
+            menuDropdown.classList.toggle('menu-open');
         });
     }
+
+    //Stänger dropdown meny om man klickar utanför
+    document.addEventListener('click', (event) => {
+        const isMenuClicked = menuButton.contains(event.target) || menuDropdown.contains(event.target);
+
+        // Kolla om klicket var utanför menyn och knappen
+        if (!isMenuClicked) {
+            // Stäng menyn genom att ta bort "menu-open" klassen
+            menuDropdown.classList.remove("menu-open");
+        }
+    });
+
+    //Stänger dropdown meny om man scrollar
+    document.querySelector('main').addEventListener('scroll', () => {
+
+        // Stäng menyn genom att ta bort "menu-open" klassen
+        menuDropdown.classList.remove("menu-open");
+    });
 }
 
 
@@ -115,8 +138,8 @@ function menuAndFooterOpeners(){
 
             setTimeout(() => {        
                 buttonFooterOpener.innerText = "Tillbaka";  
-                buttonFooterOpener.style.backgroundColor = "#FFCB47";
-                buttonFooterOpener.style.color = "#2C4251";
+                //buttonFooterOpener.style.backgroundColor = "#FFCB47";
+                //buttonFooterOpener.style.color = "#2C4251";
             }, 1000);   
 
         } else {
@@ -125,8 +148,8 @@ function menuAndFooterOpeners(){
 
             setTimeout(() => {        
                 buttonFooterOpener.innerText = "Se beställning";   
-                buttonFooterOpener.style.backgroundColor = "#2C4251";
-                buttonFooterOpener.style.color = "#FFCB47";         
+                //buttonFooterOpener.style.backgroundColor = "#2C4251";
+                //buttonFooterOpener.style.color = "#FFCB47";         
             }, 1000);        
         }
     });
