@@ -157,7 +157,6 @@ function menuAndFooterOpeners(){
 
 
 //Bildspel - Om oss
-// const imgContainer = document.querySelector('.section-om-oss__picture-scroller__img-container');
 const aboutArticles = document.querySelectorAll('.section-om-oss__picture-scroller__article');
 let currentIndex = 0;
 let intervalId;
@@ -188,7 +187,7 @@ function updateImage() {
 function startSlideshow() {
   intervalId = setInterval(() => {
     changeImage(1);
-  }, 5000); // Change image every 2 seconds (adjust as needed)
+  }, 5000); // Change image every 5 seconds (adjust as needed)
 }
 
 function stopSlideshow() {
