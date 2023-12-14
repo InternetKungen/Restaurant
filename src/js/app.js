@@ -1,213 +1,164 @@
 
-const menuDropdown = document.querySelector('menu');
+// --------- Header/Nav/Meny ------------
+
+// Menyknapp - hamburgermeny
 const menuButton = document.querySelector('.menu-button');
 
-//Dropdown meny ---
-let sectionContent = document.querySelectorAll('.section-content');
-let linksMenu = document.querySelectorAll('.a-menu');
+// Section - för menyfilter
+const sectionFilter = document.querySelector('.section-filter');
 
-for(let i = 0; i < linksMenu.length; i++){
-    linksMenu[i].addEventListener('click', () => {
+// Dropdownmenyn
+const menuDropdown = document.querySelector('menu');
 
-        //Ändrad, använder funktioner för tillfället
-        //Tar bort hide på menyval som klickas/ Lägger till hide på resten
-        // for(let j = 0; j < linksMenu.length; j++){
-        //     if(linksMenu[i] === linksMenu[j]){
-        //         sectionContent[j].classList.remove('hide');
-        //     } else{
-        //         sectionContent[j].classList.add('hide');
-        //     }
-        // }
+// A - nodlista över länkar i dropdownmenyn
+const linksMenu = document.querySelectorAll('.a-menu');
 
-        // Stäng menyn när man klickar på val
-        menuDropdown.classList.toggle("menu-open");
+// Sections - nodlista, containrar för de olika sidornas innehåll t.ex. hem, meny mm.
+const sectionContent = document.querySelectorAll('.section-content');
 
-    });
-}
-
-//Stänger dropdown meny om man klickar utanför
-document.addEventListener('click', (event) => {
-    const isMenuClicked = menuButton.contains(event.target) || menuDropdown.contains(event.target);
-
-    // Kolla om klicket var utanför menyn och knappen
-    if (!isMenuClicked) {
-        // Stäng menyn genom att ta bort "menu-open" klassen
-        menuDropdown.classList.remove("menu-open");
-    }
-});
-
-//Stänger dropdown meny om man scrollar
-document.addEventListener('scroll', () => {
-    // Stäng menyn genom att ta bort "menu-open" klassen
-    menuDropdown.classList.remove("menu-open");
-});
-
-
-
-const articleDish = document.querySelector('.article-dish');
-const buttonHalfCircle = document.querySelector('.button-half-circle');
-
+// Article - produktkort/maträtt på första sidan
+const articleDagens = document.querySelectorAll('.article-dagens');
+// Article - produktkort/maträtt på meny sidan
+const articleMeny = document.querySelectorAll('.article-meny')
+// Button - lägg till knapp på första sidan
+const buttonArticleAddDagens = document.querySelectorAll('.button-article-add-dagens');
+// Button - lägg till knapp på meny sidan
+const buttonArticleAddMeny = document.querySelectorAll('.button-article-add-meny');
+// Footer -
 const footer = document.querySelector('footer');
+// Button - expanderar footern
 const buttonFooterOpener = document.querySelector('.button-footer-opener');
 
+// Hindrar att användaren klickar på flera artiklar samtidigt.
 let toggleLock = false;
 
-buttonHalfCircle.addEventListener('click', () => {
-    footer.classList.toggle('footer-added');
-    setTimeout(() => {
-        footer.classList.toggle('footer-added');
-    }, 1000);
-    
-});
 
-menuButton.addEventListener('click', () => {
-    menuDropdown.classList.toggle("menu-open");
+
+// ----------------------------- FUNKTIONER -------------------------------------
+
+
+
+// Funktion - lägger till eventlisteners på länkarna i menyn.
+
+function setDropdownMenu() {
+    // Sätter eventlisteners på menyn
+    for(let i = 0; i < linksMenu.length; i++){
+        linksMenu[i].addEventListener('click', () => {
+            
+            for(let j = 0; j < linksMenu.length; j++){
+                if(linksMenu[i] === linksMenu[j]){
+                    // Visar vald sida i main
+                    sectionContent[j].classList.remove('hide');
+                    
+                } else if(linksMenu[i] === linksMenu[j]){
+                    // Döljer övriga sidor
+                    sectionContent[j].classList.remove('hide');
+                    
+                } else{
+                    sectionContent[j].classList.add('hide');
+                }
+            }
+            //Stänger menyn
+            menuDropdown.classList.toggle('menu-open');
+        });
+    }
+
+    //Stänger dropdown meny om man klickar utanför
+    document.addEventListener('click', (event) => {
+        const isMenuClicked = menuButton.contains(event.target) || menuDropdown.contains(event.target);
+
+        // Kolla om klicket var utanför menyn och knappen
+        if (!isMenuClicked) {
+            // Stäng menyn genom att ta bort "menu-open" klassen
+            menuDropdown.classList.remove("menu-open");
+        }
     });
 
-articleDish.addEventListener('click', () => {
-    if(!toggleLock){
-        toggleLock = true;
+    //Stänger dropdown meny om man scrollar
+    document.querySelector('main').addEventListener('scroll', () => {
+
+        // Stäng menyn genom att ta bort "menu-open" klassen
+        menuDropdown.classList.remove("menu-open");
+    });
+}
+
+
+
+// Funktion - gör menyobjekten klickbara och expanderar lägg till knappen
+
+function setArticlesDish(article, buttonAdd){
+    for(let i = 0; i < article.length; i++){
+
+        buttonAdd[i].addEventListener('click', () => {
+            footer.classList.toggle('footer-added');
+            setTimeout(() => {
+                footer.classList.toggle('footer-added');
+            }, 1000);  
+        });
+
+        article[i].addEventListener('click', () => {
+            if(!toggleLock){
+                toggleLock = true;
+                
+                if(!buttonAdd[i].textContent){
+                    buttonAdd[i].classList.toggle('button-article-add-open');
+                    setTimeout(() => {      
+                        buttonAdd[i].textContent = "Lägg till +";  
+                        toggleLock = false;            
+                    }, 1000);        
+                } else {
+                    buttonAdd[i].textContent = "";
+                    buttonAdd[i].classList.toggle('button-article-add-open');
+                    setTimeout(() => {        
+                        toggleLock = false;            
+                    }, 1000);        
+                }
+            } 
+            return;      
+        });
+    }
+}
+
+
+
+// Funktion - Gör menyknappen(hamburgermenyn) & "Se beställning"-knappen(expanderar footern) klickbara
+
+function menuAndFooterOpeners(){
+
+    // Gör menyknappen klickbar
+    menuButton.addEventListener('click', () => {
+        menuDropdown.classList.toggle("menu-open");
+    });
+
+    // Gör "se beställning"-knappen klickbar
+    buttonFooterOpener.addEventListener('click', () => {
+        if(buttonFooterOpener.innerText === "Se beställning"){
         
-        if(!buttonHalfCircle.textContent){
-            buttonHalfCircle.classList.toggle('button-half-circle-open');
-            setTimeout(() => {      
-                buttonHalfCircle.textContent = "Lägg till +";  
-                toggleLock = false;            
-            }, 1000);        
-        } else {
-            buttonHalfCircle.textContent = "";
-            buttonHalfCircle.classList.toggle('button-half-circle-open');
+            footer.classList.toggle('footer-open');
+
             setTimeout(() => {        
-                toggleLock = false;            
+                buttonFooterOpener.innerText = "Tillbaka";  
+                //buttonFooterOpener.style.backgroundColor = "#FFCB47";
+                //buttonFooterOpener.style.color = "#2C4251";
+            }, 1000);   
+
+        } else {
+        
+            footer.classList.toggle('footer-open');
+
+            setTimeout(() => {        
+                buttonFooterOpener.innerText = "Se beställning";   
+                //buttonFooterOpener.style.backgroundColor = "#2C4251";
+                //buttonFooterOpener.style.color = "#FFCB47";         
             }, 1000);        
         }
-    } 
-    return;      
-});
-
-buttonFooterOpener.addEventListener('click', () => {
-    if(buttonFooterOpener.innerText === "Se beställning"){
-        
-        footer.classList.toggle('footer-open');
-
-        //Ändra titel i header
-        originalTitle = document.querySelector('.figure-logo').innerText;
-        changeFigureLogoText("Beställning")
-
-        setTimeout(() => {        
-            buttonFooterOpener.innerText = "Tillbaka";  
-            buttonFooterOpener.style.backgroundColor = "#FFCB47";
-            buttonFooterOpener.style.color = "#2C4251";
-        }, 1000);        
-    } else{
-        
-        footer.classList.toggle('footer-open');
-
-        //Ändra tillbaka titel i header
-        changeFigureLogoText(originalTitle);
-
-        setTimeout(() => {     
-            buttonFooterOpener.innerText = "Se beställning";   
-            buttonFooterOpener.style.backgroundColor = "#2C4251";
-            buttonFooterOpener.style.color = "#FFCB47";         
-        }, 1000);        
-        
-    }
-    
-});
-
-//Ändrar title i header
-function changeFigureLogoText(newText) {
-    const figureLogo = document.querySelector('.figure-logo');
-    if (figureLogo) {
-        figureLogo.innerText = newText;
-    } else {
-        console.error("Elementet med klassen '.figure-logo' kunde inte hittas.");
-    }
+    });
 }
 
-// Denna kod körs först när sidan laddas och gömmer saker
-document.addEventListener('DOMContentLoaded', function () {
-     //hidden
-    document.querySelector('.section-meny').style.display = 'none';
-    document.querySelector('.section-tider').style.display = 'none';
-    document.querySelector('.section-boka').style.display = 'none';
-    document.querySelector('.section-kontakt').style.display = 'none';
-    //visible
-    document.querySelector('.section-dagens').style.display = 'flex';
-});
 
-function loadHomePage() {
-    //hidden
-    document.querySelector('.section-meny').style.display = 'none';
-    document.querySelector('.section-tider').style.display = 'none';
-    document.querySelector('.section-boka').style.display = 'none';
-    document.querySelector('.section-kontakt').style.display = 'none';
-    // document.querySelector('.section-footer-order').style.display = 'none';
-    
-    //visible
-    document.querySelector('.section-dagens').style.display = 'flex';
-    
-    //Title in header
-    changeFigureLogoText("Våran Restaurang");
-}
 
-function loadMenuPage() {
-    //hidden
-    document.querySelector('.section-dagens').style.display = 'none';
-    document.querySelector('.section-tider').style.display = 'none';
-    document.querySelector('.section-boka').style.display = 'none';
-    document.querySelector('.section-kontakt').style.display = 'none';
-    // document.querySelector('.section-footer-order').style.display = 'none';
-    
-    //visible
-    document.querySelector('.section-meny').style.display = 'flex';
 
-    //Title in header
-    changeFigureLogoText("Meny");
-}
-
-function loadOpenHourPage() {
-    //hidden
-    document.querySelector('.section-dagens').style.display = 'none';
-    document.querySelector('.section-boka').style.display = 'none';
-    document.querySelector('.section-meny').style.display = 'none';
-    document.querySelector('.section-kontakt').style.display = 'none';
-    // document.querySelector('.section-footer-order').style.display = 'none';
-    
-    //visible
-    document.querySelector('.section-tider').style.display = 'flex';
-
-    //Title in header
-    changeFigureLogoText("Öppettider");
-}
-
-function loadBookingPage() {
-    //hidden
-    document.querySelector('.section-dagens').style.display = 'none';
-    document.querySelector('.section-tider').style.display = 'none';
-    document.querySelector('.section-meny').style.display = 'none';
-    document.querySelector('.section-kontakt').style.display = 'none';
-    // document.querySelector('.section-footer-order').style.display = 'none';
-    
-    //visible
-    document.querySelector('.section-boka').style.display = 'flex';
-
-    //Title in header
-    changeFigureLogoText("Bordsbokning");
-}
-
-function loadContactPage() {
-    //hidden
-    document.querySelector('.section-dagens').style.display = 'none';
-    document.querySelector('.section-tider').style.display = 'none';
-    document.querySelector('.section-meny').style.display = 'none';
-    document.querySelector('.section-boka').style.display = 'none';
-    // document.querySelector('.section-footer-order').style.display = 'none';
-    
-    //visible
-    document.querySelector('.section-kontakt').style.display = 'flex';
-
-    //Title in header
-    changeFigureLogoText("Kontakta oss");
-}
+setDropdownMenu();
+setArticlesDish(articleDagens, buttonArticleAddDagens);
+setArticlesDish(articleMeny, buttonArticleAddMeny);
+menuAndFooterOpeners();
