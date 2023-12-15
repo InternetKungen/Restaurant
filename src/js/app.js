@@ -91,30 +91,11 @@ function setArticlesDish(article, buttonAdd){
 
         buttonAdd[i].addEventListener('click', () => {
             footer.classList.toggle('footer-added');
+            buttonAdd[i].classList.toggle('button-article-add-click');
             setTimeout(() => {
                 footer.classList.toggle('footer-added');
-            }, 1000);  
-        });
-
-        article[i].addEventListener('click', () => {
-            if(!toggleLock){
-                toggleLock = true;
-                
-                if(!buttonAdd[i].textContent){
-                    buttonAdd[i].classList.toggle('button-article-add-open');
-                    setTimeout(() => {      
-                        buttonAdd[i].textContent = "Lägg till +";  
-                        toggleLock = false;            
-                    }, 1000);        
-                } else {
-                    buttonAdd[i].textContent = "";
-                    buttonAdd[i].classList.toggle('button-article-add-open');
-                    setTimeout(() => {        
-                        toggleLock = false;            
-                    }, 1000);        
-                }
-            } 
-            return;      
+                buttonAdd[i].classList.toggle('button-article-add-click');
+            }, 500);  
         });
     }
 }

@@ -241,16 +241,14 @@ main {
   background-color: var(--red);
   color: var(--white);
   height: 4rem;
-  width: 2rem;
+  width: 50%;
   padding: var(--padding);
   border-radius: 0 2rem 2rem 0;
   border: 0;
-  transition: width 1s ease-in-out;
-  
+  transition: width 0.5s ease-in-out; 
 }
-/* Klass för att toggla - expanderar "lägg till"-knappen */
-.button-article-add-open {
-  width: 50%;
+.button-article-add-click {
+  width: 45%;
 }
 
 /* h3 - Maträttens namn */
