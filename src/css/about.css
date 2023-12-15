@@ -23,9 +23,10 @@
   
   .section-om-oss__picture-scroller__play-stop-container {
     position: absolute;
-    top: 58%;
+    bottom: 22%;
     left: 49%;
     transform: translateX(-50%);
+
     display: flex;
     justify-content: flex-end;
     width: 100%;
@@ -66,7 +67,7 @@
     overflow: hidden;
     background-color: var(--black);
     border: 1px solid var(--red);
-    height: 350px;
+    height: 70vw;
     width: 100%;
   }
   
