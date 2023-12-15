@@ -172,7 +172,7 @@ menu a {
 
 /* ************************************ MAIN ******************************************** */
 main {
-  /* padding: var(--padding); */
+  padding: var(--padding);
   width: 100%;
   height: 100%;
   min-height: 75vh;
@@ -187,16 +187,17 @@ main {
   background-color: var(--black);
   color: var(--red);
   padding: var(--padding);
-  /* margin-bottom: var(--padding); */
-  /* border: 1px solid var(--red); */
+  margin-bottom: var(--padding);
+  border: 1px solid var(--red);
 }
 
 /* Article - menyobjekten på första sidan(dagens) och meny-sidan */
 .article-dish {
   background-color: var(--black);
   margin-bottom: var(--padding);
-  /* border: 1px solid var(--red); */
+  border: 1px solid var(--red);
 }
+
 
 .p-article-originandrate {
   height: 2rem;
@@ -226,6 +227,19 @@ main {
 
 /* Button - "lägg till"-knappen */
 .button-article-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* font-size: 1.2rem; */
+  background-color: var(--red);
+  color: var(--white);
+  height: 4rem;
+  width: 25%;
+  border-radius: 0 2rem 2rem 0;
+  border: 0;
+  }
+
+/* .button-article-add {
   font-size: 1.5rem;
   background-color: var(--red);
   color: var(--white);
@@ -235,11 +249,11 @@ main {
   border-radius: 0 2rem 2rem 0;
   border: 0;
   transition: width 1s ease-in-out;
-}
+} */
 /* Klass för att toggla - expanderar "lägg till"-knappen */
-.button-article-add-open {
+/* .button-article-add-open {
   width: 50%;
-}
+} */
 
 /* h3 - Maträttens namn */
 .h3-dish {
@@ -395,6 +409,53 @@ footer {
   background-color: var(--black);
   border: 1px solid var(--red);
   padding: var(--padding);
+}
+
+
+
+/* filter meny  */
+
+
+/* .p-name, .p-dsc, .p-price, .p-rate, .p-country { 
+  width: 100%;
+  color: #F04245;
+} */
+
+.li-submenu-filter {
+  margin-top: 2em;
+  background-color: #F3F7F3;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.button-menu-filter {
+  border: 0;
+  padding: 0.3em;
+  font-size: 1.5em;
+  flex-grow: 1;
+  outline: 1px solid #F04245;
+  background-color: #0A0A0A;
+  color: #F04245;
+  
+}
+.button-active {
+  color: #0A0A0A;
+  background-color: #F04245;
+}
+
+.button-menu-filter-sub1, .button-menu-filter-sub2, .button-menu-filter-sub3, .button-menu-filter-sub4 {
+  background-color: #0A0A0A;
+  color: #F3F7F3;
+  outline: 1px solid #F3F7F3;
+  border: 0;
+  padding: 0.3em;
+  font-size: 1.5em;
+  flex-grow: 1;
+}
+.button-sub-active {
+  color: #0A0A0A;
+  background-color: #F3F7F3;
 }
 
 /* Klass för att toggla olika element att döljas/visas */
