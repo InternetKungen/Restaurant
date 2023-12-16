@@ -67,7 +67,7 @@
     overflow: hidden;
     background-color: var(--black);
     border: 1px solid var(--red);
-    height: 70vw;
+    height: 75vw;
     width: 100%;
   }
   
@@ -102,7 +102,7 @@
   border-top: 1px solid var(--red);
   opacity: 0;
   animation: section-om-oss__picture-scroller__article__fade-in 2s ease 1;
-  animation-delay: 0.5s;
+  animation-delay: 0.8s;
   animation-fill-mode: forwards;
   padding: 10px;
   width: 100vw;

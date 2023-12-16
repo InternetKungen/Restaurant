@@ -187,7 +187,7 @@ function updateImage() {
 function startSlideshow() {
   intervalId = setInterval(() => {
     changeImage(1);
-  }, 5000); // Change image every 5 seconds (adjust as needed)
+  }, 10000); // Change image every 5 seconds (adjust as needed)
 }
 
 function stopSlideshow() {
