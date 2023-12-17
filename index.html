@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
     <link rel="stylesheet" type="text/css" href="./src/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./src/css/about.css" />
     <link rel="stylesheet" href="./src/css/contact.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,10 +32,11 @@
           </button>
           <!-- Dropdownmeny -->
           <menu>
-            <li><a href="#" name="Nyheter" class="a-menu">HEM</a></li>
-            <li><a href="#" name="Böcker" class="a-menu">MENY</a></li>
-            <li><a href="#" name="Om" class="a-menu">BOKA BORD</a></li>
+            <li><a href="#" name="Hem" class="a-menu">HEM</a></li>
+            <li><a href="#" name="Meny" class="a-menu">MENY</a></li>
+            <li><a href="#" name="Boka" class="a-menu">BOKA BORD</a></li>
             <li><a href="#" name="Kontakt" class="a-menu">KONTAKT</a></li>
+            <li><a href="#" name="Om-oss" class="a-menu">OM OSS</a></li>
           </menu>
         </nav>
 
@@ -321,6 +323,78 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- Section - Om Oss - container för det som ska visas på kontakt-sidan -->
+      <section class="section-content section-om-oss hide">
+        <!--Om oss - Welcome-->
+        <section class="section-om-oss__title">
+          <h1 class="h1-dish">Välkommen till Taverna!</h1>
+        </section>
+        <!--BILDSPEL/SCROLLER-->
+        <section class="section-om-oss__picture-scroller">
+          <div class="section-om-oss__picture-scroller__button-container">
+            <button
+              class="section-om-oss__picture-scroller__button-left"
+              onclick="changeImageDirectionPre(-1)"
+            >
+              <img src="./src/img/left-arrow-color.png" alt="Left arrow" />
+            </button>
+            <button
+              class="section-om-oss__picture-scroller__button-right"
+              onclick="changeImageDirectionPre(1)"
+            >
+              <img src="./src/img/right-arrow-color.png" alt="Right arrow" />
+            </button>
+          </div>
+          <div class="section-om-oss__picture-scroller__play-stop-container">
+            <button
+              class="section-om-oss__picture-scroller__button-play"
+              onclick="togglePlayStop(this)"
+            >
+              <img src="./src/img/play.png" alt="Play" />
+            </button>
+          </div>
+          <!--ARTIKLAR TILL BILDSPELET-->
+          <section class="section-om-oss__picture-scroller__article-container">
+            <article class="section-om-oss__picture-scroller__article">
+              <figure
+                class="section-om-oss__picture-scroller__article__img-container"
+              >
+                <img src="src/img/got.jpg" alt="something" />
+              </figure>
+              <p>En beskrivande text</p>
+            </article>
+
+            <article class="section-om-oss__picture-scroller__article hide">
+              <figure
+                class="section-om-oss__picture-scroller__article__img-container"
+              >
+                <img src="src/img/pizza.jpg" alt="something pizza" />
+              </figure>
+              <p>En annan beskrivning</p>
+            </article>
+          </section>
+        </section>
+
+        <section class="section-om-oss__information">
+          <h3 class="h3-om-oss">Om oss</h3>
+          <p class="p-om-oss">
+            Vår passion är att skapa en autentisk BBQ-upplevelse, där varje
+            måltid är en hyllning till rökiga smaker och traditionella
+            tillagningsmetoder. Vårt kök är fyllt av en blandning av hemligheter
+            och kärlek till konsten att grilla. Oavsett om du älskar saftiga
+            revben, långsamt tillagad pulled pork eller smakrik brisket, kommer
+            du att uppleva äkta värme i varje tugga.
+          </p>
+
+          <img src="./src/img/transparentlogo.png" />
+          <p class="p-om-oss">
+            På Taverna handlar det inte bara om mat; det handlar om gemenskap,
+            glädje och en smakresa genom BBQ-traditioner. Vi ser fram emot att
+            välkomna dig till vårt bord och dela dessa smakupplevelser med dig.
+          </p>
+        </section>
       </section>
     </main>
 
