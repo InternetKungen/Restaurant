@@ -23,7 +23,7 @@
   
   .section-om-oss__picture-scroller__play-stop-container {
     position: absolute;
-    bottom: 22%;
+    bottom: 100px;
     left: 49%;
     transform: translateX(-50%);
 
