@@ -30,7 +30,7 @@
 
   --footer-bg: #0a0a0a;
 
-  --border-color: #f04245;
+  --border-color: #f04242;
 
   --red: #f04245;
   --black: #0a0a0a;
@@ -210,7 +210,7 @@ main {
   font-weight: 400;
   background-color: var(--black);
   color: var(--red);
-  padding: var(--padding);
+  /* padding: var(--padding); */
   text-align: center;
   margin-bottom: var(--padding);
   /* border: 1px solid var(--red); */
@@ -234,7 +234,7 @@ main {
   border: 1px solid var(--border-color);
   box-shadow: 0 0 5px var(--red);
   border-radius: 4px;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* .li-menu-filter:focus-within {
@@ -261,6 +261,10 @@ main {
 
 /* Article - menyobjekten på första sidan(dagens) och meny-sidan */
 .article-dish {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   background-color: var(--black);
   margin-bottom: var(--padding);
   border: 1px solid var(--red);
@@ -268,11 +272,12 @@ main {
   border: 1px solid var(--border-color);
   box-shadow: 0 0 5px var(--red);
   border-radius: 4px;
+  height: 550px;
 }
 
 .p-article-originandrate {
-  height: 2rem;
-  padding: 0.5rem;
+  height: 30px;
+  padding: 5px;
 }
 
 .article-dish img {
@@ -294,12 +299,14 @@ main {
 /* Img - Bild på maträtt  */
 .img-dish {
   width: 100%;
-  margin-bottom: var(--padding);
+  /* margin-bottom: var(--padding); */
 }
 /* Span - container för "lägg till"-knapp och maträttens namn */
 .span-dish {
+  margin-top: 10px;
   display: flex;
   width: 100%;
+  align-self: center;
 }
 
 /* Button - "lägg till"-knappen */
@@ -335,22 +342,34 @@ main {
 /* h3 - Maträttens namn */
 .h3-dish {
   color: var(--red);
-  padding: var(--padding);
+  padding-left: 20px;
+  align-self: center;
+  /* padding: var(--padding); */
   /* display: inline; */
   font-weight: 400;
-  max-width: 50%;
-  height: 2rem;
+  max-width: 60%;
+  /* height: 2rem; */
+  flex: 1;
+  font-size: large;
 }
 /* P - beskrivning av maträtten */
 .p-dish {
   color: var(--white);
-  padding: var(--padding);
+  /* padding: var(--padding); */
+  align-self: center;
+  margin-top: 16px;
+  padding: 0 10px 0 10px;
+  flex: 1;
+  font-size: large;
+  text-align: center;
 }
 .p-price {
   color: var(--red);
-  font-size: 1.5rem;
+  font-size: 20px;
   text-align: right;
-  padding: var(--padding);
+  /* padding: var(--padding); */
+  align-self: center;
+  height: 50px;
 }
 
 /* **************************** FOOTER **************************** */
@@ -509,7 +528,7 @@ footer {
 .button-menu-filter {
   border: 0;
   padding: 0.3em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   flex-grow: 1;
   outline: 1px solid #f04245;
   background-color: #0a0a0a;
@@ -529,7 +548,7 @@ footer {
   outline: 1px solid #f3f7f3;
   border: 0;
   padding: 0.3em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   flex-grow: 1;
 }
 .button-sub-active {
