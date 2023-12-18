@@ -45,3 +45,5 @@ chosenIndexes.forEach((index, i) => {
     todaysDishesSection.append(todaysDish);
   }
 });
+
+/* Changes */
