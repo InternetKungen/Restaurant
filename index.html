@@ -17,8 +17,13 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link rel="apple-touch-icon" sizes="180x180" href="./src/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/img//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/img/favicon-16x16.png">
+    <link rel="manifest" href="./src/img/site.webmanifest">
     <script src="./src/js/app.js" defer type="module"></script>
     <script src="./src/js/scrollToHeader.js" defer type="module"></script>
+    <script type="module" src="./src/js/todaysDishes.js" defer></script>
   </head>
   <body>
     <!------------------------------ Header ------------------------------>
@@ -50,48 +55,13 @@
     <main>
       <!-- Anchor to scroll the pages to the top when the logo is clicked -->
       <div id="scroll-to-top"></div>
-      <!-- Section för första sidan, Hem. Där visas "featured food and beverages"/dagens -->
-      <section class="section-dagens section-content">
+
+      <!-- Featured food and beverages -->
+      
+      
+      <section class="todays-dishes-section section-dagens section-content">
         <h1 class="h1-dish">Dagens special</h1>
-
-        <!-- Article - container för produktkort/en maträtt -->
-        <article class="article-dagens article-dish">
-          <!-- Bild på maträtt -->
-          <img src="./src/img/pizza.jpg" class="img-dish" />
-
-          <!-- Span - container för "lägg till"-knappen och namnet på maträtten -->
-          <span class="span-dish">
-            <!-- Button - lägg till maträtt till beställning -->
-            <button class="button-article-add button-article-add-dagens"></button>
-
-            <!-- h3 - namnet på maträtten -->
-            <h3 class="h3-dish">Pizza Frontend</h3>
-          </span>
-
-          <!-- p - beskrivning av maträtt -->
-          <p class="p-dish">
-            En fantastiskt god pizza bakad i stenugn med en enbart de bästa ingredienser, färska
-            variabler, snabba loopar och ett smaskigt gränssnitt.
-          </p>
-        </article>
-
-        <!---------------- Nästa maträtt ------------------>
-        <article class="article-dagens article-dish">
-          <!-- Bild på maträtt -->
-          <img src="./src/img/got.jpg" class="img-dish" />
-
-          <!-- Span - container för "lägg till"-knappen och namnet på maträtten -->
-          <span class="span-dish">
-            <!-- Button - "lägg till"-knapp -->
-            <button class="button-article-add button-article-add-dagens"></button>
-
-            <!-- h3 - namnet på maträtten -->
-            <h3 class="h3-dish">Gin & Tonic</h3>
-          </span>
-
-          <!-- P - beskrivning av maträtten -->
-          <p class="p-dish">En riktig klassiker.</p>
-        </article>
+        <article class="todays-dishes"></article>
       </section>
 
       <!------------------------ Section - Meny - container för det som ska visas på meny-sidan --------------------->
