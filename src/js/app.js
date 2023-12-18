@@ -1,4 +1,3 @@
-
 // --------- Header/Nav/Meny ------------
 
 // Menyknapp - hamburgermeny
@@ -19,7 +18,7 @@ const sectionContent = document.querySelectorAll('.section-content');
 // Article - produktkort/maträtt på första sidan
 const articleDagens = document.querySelectorAll('.article-dagens');
 // Article - produktkort/maträtt på meny sidan
-const articleMeny = document.querySelectorAll('.article-meny')
+const articleMeny = document.querySelectorAll('.article-meny');
 // Button - lägg till knapp på första sidan
 const buttonArticleAddDagens = document.querySelectorAll('.button-article-add-dagens');
 // Button - lägg till knapp på meny sidan
@@ -32,129 +31,112 @@ const buttonFooterOpener = document.querySelector('.button-footer-opener');
 // Hindrar att användaren klickar på flera artiklar samtidigt.
 let toggleLock = false;
 
-
-
 // ----------------------------- FUNKTIONER -------------------------------------
-
-
 
 // Funktion - lägger till eventlisteners på länkarna i menyn.
 
 function setDropdownMenu() {
-    // Sätter eventlisteners på menyn
-    for(let i = 0; i < linksMenu.length; i++){
-        linksMenu[i].addEventListener('click', () => {
-            
-            for(let j = 0; j < linksMenu.length; j++){
-                if(linksMenu[i] === linksMenu[j]){
-                    // Visar vald sida i main
-                    sectionContent[j].classList.remove('hide');
-                    
-                } else if(linksMenu[i] === linksMenu[j]){
-                    // Döljer övriga sidor
-                    sectionContent[j].classList.remove('hide');
-                    
-                } else{
-                    sectionContent[j].classList.add('hide');
-                }
-            }
-            //Stänger menyn
-            menuDropdown.classList.toggle('menu-open');
-        });
-    }
-
-    //Stänger dropdown meny om man klickar utanför
-    document.addEventListener('click', (event) => {
-        const isMenuClicked = menuButton.contains(event.target) || menuDropdown.contains(event.target);
-
-        // Kolla om klicket var utanför menyn och knappen
-        if (!isMenuClicked) {
-            // Stäng menyn genom att ta bort "menu-open" klassen
-            menuDropdown.classList.remove("menu-open");
+  // Sätter eventlisteners på menyn
+  for (let i = 0; i < linksMenu.length; i++) {
+    linksMenu[i].addEventListener('click', () => {
+      for (let j = 0; j < linksMenu.length; j++) {
+        if (linksMenu[i] === linksMenu[j]) {
+          // Visar vald sida i main
+          sectionContent[j].classList.remove('hide');
+        } else if (linksMenu[i] === linksMenu[j]) {
+          // Döljer övriga sidor
+          sectionContent[j].classList.remove('hide');
+        } else {
+          sectionContent[j].classList.add('hide');
         }
+      }
+      //Stänger menyn
+      menuDropdown.classList.toggle('menu-open');
     });
+  }
 
-    //Stänger dropdown meny om man scrollar
-    document.querySelector('main').addEventListener('scroll', () => {
+  //Stänger dropdown meny om man klickar utanför
+  document.addEventListener('click', (event) => {
+    const isMenuClicked = menuButton.contains(event.target) || menuDropdown.contains(event.target);
 
-        // Stäng menyn genom att ta bort "menu-open" klassen
-        menuDropdown.classList.remove("menu-open");
-    });
+    // Kolla om klicket var utanför menyn och knappen
+    if (!isMenuClicked) {
+      // Stäng menyn genom att ta bort "menu-open" klassen
+      menuDropdown.classList.remove('menu-open');
+    }
+  });
+
+  //Stänger dropdown meny om man scrollar
+  document.querySelector('main').addEventListener('scroll', () => {
+    // Stäng menyn genom att ta bort "menu-open" klassen
+    menuDropdown.classList.remove('menu-open');
+  });
 }
-
-
 
 // Funktion - gör menyobjekten klickbara och expanderar lägg till knappen
 
-function setArticlesDish(article, buttonAdd){
-    for(let i = 0; i < article.length; i++){
+function setArticlesDish(article, buttonAdd) {
+  for (let i = 0; i < article.length; i++) {
+    buttonAdd[i].addEventListener('click', () => {
+      footer.classList.toggle('footer-added');
+      setTimeout(() => {
+        footer.classList.toggle('footer-added');
+      }, 1000);
+    });
 
-        buttonAdd[i].addEventListener('click', () => {
-            footer.classList.toggle('footer-added');
-            setTimeout(() => {
-                footer.classList.toggle('footer-added');
-            }, 1000);  
-        });
+    article[i].addEventListener('click', () => {
+      if (!toggleLock) {
+        toggleLock = true;
 
-        article[i].addEventListener('click', () => {
-            if(!toggleLock){
-                toggleLock = true;
-                
-                if(!buttonAdd[i].textContent){
-                    buttonAdd[i].classList.toggle('button-article-add-open');
-                    setTimeout(() => {      
-                        buttonAdd[i].textContent = "Lägg till +";  
-                        toggleLock = false;            
-                    }, 1000);        
-                } else {
-                    buttonAdd[i].textContent = "";
-                    buttonAdd[i].classList.toggle('button-article-add-open');
-                    setTimeout(() => {        
-                        toggleLock = false;            
-                    }, 1000);        
-                }
-            } 
-            return;      
-        });
-    }
+        if (!buttonAdd[i].textContent) {
+          buttonAdd[i].classList.toggle('button-article-add-open');
+          setTimeout(() => {
+            buttonAdd[i].textContent = 'Lägg till +';
+            toggleLock = false;
+          }, 1000);
+        } else {
+          buttonAdd[i].textContent = '';
+          buttonAdd[i].classList.toggle('button-article-add-open');
+          setTimeout(() => {
+            toggleLock = false;
+          }, 1000);
+        }
+      }
+      return;
+    });
+  }
 }
-
-
 
 // Funktion - Gör menyknappen(hamburgermenyn) & "Se beställning"-knappen(expanderar footern) klickbara
 
-function menuAndFooterOpeners(){
 
-    // Gör menyknappen klickbar
-    menuButton.addEventListener('click', () => {
-        menuDropdown.classList.toggle("menu-open");
-    });
+function menuAndFooterOpeners() {
+  // Gör menyknappen klickbar
+  menuButton.addEventListener('click', () => {
+    menuDropdown.classList.toggle('menu-open');
+  });
 
-    // Gör "se beställning"-knappen klickbar
-    buttonFooterOpener.addEventListener('click', () => {
-        if(buttonFooterOpener.innerText === "Se beställning"){
-        
-            footer.classList.toggle('footer-open');
+  // Gör "se beställning"-knappen klickbar
+  buttonFooterOpener.addEventListener('click', () => {
+    if (buttonFooterOpener.innerText === 'Se beställning') {
+      footer.classList.toggle('footer-open');
 
-            setTimeout(() => {        
-                buttonFooterOpener.innerText = "Tillbaka";  
-                //buttonFooterOpener.style.backgroundColor = "#FFCB47";
-                //buttonFooterOpener.style.color = "#2C4251";
-            }, 1000);   
+      setTimeout(() => {
+        buttonFooterOpener.innerText = 'Tillbaka';
+        //buttonFooterOpener.style.backgroundColor = "#FFCB47";
+        //buttonFooterOpener.style.color = "#2C4251";
+      }, 1000);
+    } else {
+      footer.classList.toggle('footer-open');
 
-        } else {
-        
-            footer.classList.toggle('footer-open');
-
-            setTimeout(() => {        
-                buttonFooterOpener.innerText = "Se beställning";   
-                //buttonFooterOpener.style.backgroundColor = "#2C4251";
-                //buttonFooterOpener.style.color = "#FFCB47";         
-            }, 1000);        
-        }
-    });
+      setTimeout(() => {
+        buttonFooterOpener.innerText = 'Se beställning';
+        //buttonFooterOpener.style.backgroundColor = "#2C4251";
+        //buttonFooterOpener.style.color = "#FFCB47";
+      }, 1000);
+    }
+  });
 }
-
 
 //Bildspel - Om oss
 const aboutArticles = document.querySelectorAll('.section-om-oss__picture-scroller__article');
@@ -208,6 +190,7 @@ function togglePlayStop(button) {
   }
 }
 //-------------------------------------
+
 
 setDropdownMenu();
 setArticlesDish(articleDagens, buttonArticleAddDagens);

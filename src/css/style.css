@@ -43,6 +43,30 @@
   padding: 0;
 }
 
+/* -------------------------------------------------------------------------------- */
+/* Today's Dishes */
+.todays-dishes {
+  color: var(--white);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.todays-dish {
+  padding: 2rem;
+  line-height: 1.5;
+  font-size: 18px;
+}
+.todays-dish-img {
+  width: 260px;
+}
+.todays-dish-country {
+  font-size: 14px;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+/* -------------------------------------------------------------------------------- */
+
 body {
   font-size: var(--font);
   font-family: 'Roboto', sans-serif;
@@ -64,12 +88,12 @@ a {
 header {
   width: 100%;
   height: 10vh;
+  border-bottom: 1px solid var(--red);
 }
 
 nav {
   background-color: var(--black);
   width: 30%;
-  height: calc(10vh - 1px); /* för att border ska synas */
   position: relative;
   display: flex;
 }
@@ -79,8 +103,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: var(--padding);
-  border-bottom: 1px solid var(--red);
+  padding: 0 var(--padding);
 }
 
 /* Logotyp */
@@ -92,7 +115,6 @@ nav {
 
 /* Knapp för hamburgermenyn */
 .menu-button {
-  padding-left: var(--padding);
   outline: none;
   border: 0;
   background: transparent;
@@ -118,7 +140,6 @@ menu {
   left: 0;
   width: 75vw;
   border: 1px solid var(--black);
-
   list-style: none;
   overflow: hidden;
   z-index: 20;
@@ -182,11 +203,12 @@ main {
 
 /* h1 - huvudrubrik till de olika sidorna */
 .h1-dish {
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   font-weight: 400;
   background-color: var(--black);
   color: var(--red);
   padding: var(--padding);
+  text-align: center;
   /* margin-bottom: var(--padding); */
   /* border: 1px solid var(--red); */
 }
@@ -401,4 +423,3 @@ footer {
 .hide {
   display: none;
 }
-
