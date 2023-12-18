@@ -33,6 +33,12 @@
     z-index: 4;
   }
   
+  .section-om-oss__picture-scroller__button-left,
+  .section-om-oss__picture-scroller__button-right,
+  .section-om-oss__picture-scroller__button-play {
+    cursor: pointer;
+  }
+
   .section-om-oss__picture-scroller__button-play {
     background: transparent;
     border: none;
