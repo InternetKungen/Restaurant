@@ -56,6 +56,9 @@
   padding: 2rem;
   line-height: 1.5;
   font-size: 18px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 5px var(--red);
+  border-radius: 4px;
 }
 .todays-dish-img {
   width: 260px;
@@ -210,20 +213,73 @@ main {
   padding: var(--padding);
   text-align: center;
   margin-bottom: var(--padding);
-  border: 1px solid var(--red);
+  /* border: 1px solid var(--red); */
 }
+
+.section-menu-cat {
+  color: var(--white);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.ul-menu-filter {
+  margin: 0 0 20px 0;
+}
+
+.li-menu-filter {
+  display: flex;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 5px var(--red);
+  border-radius: 4px;
+  /* overflow: hidden; */
+}
+
+/* .li-menu-filter:focus-within {
+  display: flex;
+  border: 1px solid var(--white);
+  box-shadow: 0 0 5px var(--white);
+  border-radius: 4px;
+  overflow: hidden;
+} */
+
+
+.sub-section-meny-bbqmeats,
+.sub-section-meny-sandwishpizza,
+.sub-section-meny-drinksandsides,
+.sub-section-meny-desserts {
+  /* color: var(--white); */
+  /* text-align: center; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
 
 /* Article - menyobjekten på första sidan(dagens) och meny-sidan */
 .article-dish {
   background-color: var(--black);
   margin-bottom: var(--padding);
   border: 1px solid var(--red);
+  max-width: 300px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 5px var(--red);
+  border-radius: 4px;
 }
 
 .p-article-originandrate {
   height: 2rem;
   padding: 0.5rem;
 }
+
+.article-dish img {
+  border-bottom: 1px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+}
+
 .span-p-origin {
   font-size: 1rem;
   color: var(--red);
@@ -280,7 +336,7 @@ main {
 .h3-dish {
   color: var(--red);
   padding: var(--padding);
-  display: inline;
+  /* display: inline; */
   font-weight: 400;
   max-width: 50%;
   height: 2rem;
@@ -440,11 +496,15 @@ footer {
 } */
 
 .li-submenu-filter {
-  margin-top: 2em;
+  /* margin-top: 2em; */
   background-color: #f3f7f3;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  border: 1px solid var(--white);
+  box-shadow: 0 0 5px var(--white);
+  border-radius: 4px;
 }
 .button-menu-filter {
   border: 0;
