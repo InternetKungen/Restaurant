@@ -21,8 +21,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./src/img//favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./src/img/favicon-16x16.png">
     <link rel="manifest" href="./src/img/site.webmanifest">
-    <script src="./src/js/app.js" defer></script>
-    <script src="./src/js/scrollToHeader.js" defer></script>
+    <script src="./src/js/app.js" defer type="module"></script>
+    <script src="./src/js/scrollToHeader.js" defer type="module"></script>
     <script type="module" src="./src/js/todaysDishes.js" defer></script>
     <script src="./src/js/imageScroller.js" defer></script>
   </head>
@@ -72,53 +72,183 @@
         <h1 class="h1-dish">Meny</h1>
 
         <!-- Article - container för produktkort/en maträtt -->
-        <article class="article-meny article-dish">
+        <!-- <article class="article-meny article-dish"> -->
           <!-- p - innehåller rättens ursprung och rate -->
-          <p class="p-article-originandrate">
+          <!-- <p class="p-article-originandrate">
             <span class="span-p-origin">Ursprung: Austin, TX</span>
             <span class="span-p-rate">Rate: 5</span>
-          </p>
+          </p> -->
 
           <!-- Bild på maträtt -->
-          <img src="./src/img/pizza.jpg" class="img-dish" />
+          <!-- <img src="./src/img/pizza.jpg" class="img-dish" /> -->
 
           <!-- Span - container för "lägg till"-knappen och namnet på maträtten -->
-          <span class="span-dish">
+          <!-- <span class="span-dish"> -->
             <!-- Button - lägg till maträtt till beställning -->
-            <button class="button-article-add button-article-add-meny"></button>
+            <!-- <button class="button-article-add button-article-add-meny"></button> -->
 
             <!-- h3 - namnet på maträtten -->
-            <h3 class="h3-dish">Pizza Frontend</h3>
-          </span>
+            <!-- <h3 class="h3-dish">Pizza Frontend</h3> -->
+          <!-- </span> -->
 
           <!-- p - beskrivning av maträtt -->
-          <p class="p-dish">
+          <!-- <p class="p-dish">
             En fantastiskt god pizza bakad i stenugn med en enbart de bästa ingredienser, färska
             variabler, snabba loopar och ett smaskigt gränssnitt.
-          </p>
+          </p> -->
 
           <!-- P - priset -->
-          <p class="p-price">120 kr</p>
-        </article>
+          <!-- <p class="p-price">120 kr</p> -->
+        <!-- </article> -->
 
         <!---------------- Nästa maträtt ------------------>
-        <article class="article-meny article-dish">
+        <!-- <article class="article-meny article-dish"> -->
           <!-- Bild på maträtt -->
-          <img src="./src/img/got.jpg" class="img-dish" />
+          <!-- <img src="./src/img/got.jpg" class="img-dish" /> -->
 
           <!-- Span - container för "lägg till"-knappen och namnet på maträtten -->
-          <span class="span-dish">
+          <!-- <span class="span-dish"> -->
             <!-- Button - "lägg till"-knapp -->
-            <button class="button-article-add button-article-add-meny"></button>
+            <!-- <button class="button-article-add button-article-add-meny"></button> -->
 
             <!-- h3 - namnet på maträtten -->
-            <h3 class="h3-dish">Gin & Tonic</h3>
-          </span>
+            <!-- <h3 class="h3-dish">Gin & Tonic</h3>
+          </span> -->
 
           <!-- P - beskrivning av maträtten -->
-          <p class="p-dish">En riktig klassiker.</p>
+          <!-- <p class="p-dish">En riktig klassiker.</p>
         </article>
+      </section> -->
+
+      <section class="section-meny">
+        <ul class="ul-menu-filter">
+          <li class="li-menu-filter">
+            <button type="button" class="button-menu-filter button-active">
+              BBQ & MEATS
+            </button>
+            <button type="button" class="button-menu-filter">
+              SANDWISH & PIZZA
+            </button>
+            <button type="button" class="button-menu-filter">
+              DRINKS & SIDES
+            </button>
+            <button type="button" class="button-menu-filter">
+              DESSERTS & GOODIES
+            </button>
+          </li>
+
+          <li class="li-menu-filter li-submenu-filter">
+            <button
+              type="button"
+              class="button-menu-filter-sub1 button-sub-active"
+            >
+              BBQS
+            </button>
+            <button type="button" class="button-menu-filter-sub1">
+              BURGERS
+            </button>
+            <button type="button" class="button-menu-filter-sub1">
+              FRIED CHICKEN
+            </button>
+            <button type="button" class="button-menu-filter-sub1">PORKS</button>
+            <button type="button" class="button-menu-filter-sub1">
+              STEAKS
+            </button>
+            <button type="button" class="button-menu-filter-sub1">
+              SAUSAGES
+            </button>
+          </li>
+
+          <li class="li-menu-filter li-submenu-filter hide">
+            <button
+              type="button"
+              class="button-menu-filter-sub2 button-sub-active"
+            >
+              SANDWISH
+            </button>
+            <button type="button" class="button-menu-filter-sub2">
+              PIZZAS
+            </button>
+          </li>
+
+          <li class="li-menu-filter li-submenu-filter hide">
+            <button
+              type="button"
+              class="button-menu-filter-sub3 button-sub-active"
+            >
+              DRINKS
+            </button>
+            <button type="button" class="button-menu-filter-sub3">SIDES</button>
+          </li>
+
+          <li class="li-menu-filter li-submenu-filter hide">
+            <button
+              type="button"
+              class="button-menu-filter-sub4 button-sub-active"
+            >
+              DESSERTS
+            </button>
+            <button type="button" class="button-menu-filter-sub4">
+              ICE-CREAM
+            </button>
+            <button type="button" class="button-menu-filter-sub4">
+              CHOCOLATES
+            </button>
+          </li>
+        </ul>
+
+        <section class="section-meny-bbqmeats section-menu-cat">
+          <section id="bbqs" class="sub-section-meny-bbqmeats">BBQS</section>
+          <section id="burgers" class="sub-section-meny-bbqmeats hide">
+            BURGERS
+          </section>
+          <section id="fried-chicken" class="sub-section-meny-bbqmeats hide">
+            FRIED CHICKEN
+          </section>
+          <section id="porks" class="sub-section-meny-bbqmeats hide">
+            PORKS
+          </section>
+          <section id="steaks" class="sub-section-meny-bbqmeats hide">
+            STEAKS
+          </section>
+          <section id="sausages" class="sub-section-meny-bbqmeats hide">
+            SAUSAGES
+          </section>
+        </section>
+
+        <section class="section-meny-sandwichpizza section-menu-cat hide">
+          <section id="sandwiches" class="sub-section-meny-sandwishpizza hide">
+            SANDWISH
+          </section>
+          <section id="pizzas" class="sub-section-meny-sandwishpizza hide">
+            PIZZA
+          </section>
+        </section>
+
+        <section class="section-meny-drinksandsides section-menu-cat hide">
+          <section id="drinks" class="sub-section-meny-drinksandsides hide">
+            DRINKS
+          </section>
+          <section id="breads" class="sub-section-meny-drinksandsides hide">
+            SIDES
+          </section>
+        </section>
+
+        <section class="section-meny-desserts section-menu-cat hide">
+          <section id="desserts" class="sub-section-meny-desserts hide">
+            DESSERTS
+          </section>
+          <section id="ice-cream" class="sub-section-meny-desserts hide">
+            ICE-CREAM
+          </section>
+          <section id="chocolates" class="sub-section-meny-desserts hide">
+            CHOCOLATES
+          </section>
+        </section>
       </section>
+
+
+
 
       <!-- Section - Boka bord - container för det som ska visas på boka bord-sidan -->
       <section class="section-content section-boka hide">Boka bord</section>
