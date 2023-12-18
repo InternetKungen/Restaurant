@@ -1,3 +1,4 @@
+import db from './database.js';
 // --------- Header/Nav/Meny ------------
 
 // Menyknapp - hamburgermeny
