@@ -3,7 +3,7 @@ import db from './db.js';
 console.log(db);
 console.log(db['best-foods'][0]);
 
-const todaysDishesSection = document.querySelector('.todays-dishes-section'); // Today's Dishes Sectionv
+const todaysDishesSection = document.querySelector('.todays-dishes'); // Today's Dishes Sectionv
 
 /* Creates Dish Element */
 function createDishElement(dish) {

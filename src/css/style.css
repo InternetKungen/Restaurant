@@ -45,7 +45,7 @@
 
 /* -------------------------------------------------------------------------------- */
 /* Today's Dishes */
-.todays-dishes-section {
+.todays-dishes {
   color: var(--white);
   text-align: center;
   display: flex;
@@ -423,4 +423,3 @@ footer {
 .hide {
   display: none;
 }
-
