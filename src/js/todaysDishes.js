@@ -1,4 +1,4 @@
-import db from './database.js';
+import db from './db.js';
 
 console.log(db);
 console.log(db['best-foods'][0]);
