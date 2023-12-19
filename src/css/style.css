@@ -204,6 +204,19 @@ main {
   overflow-y: auto;
 }
 
+.section-content {
+  animation: section-content-fade-in 0.5s ease-out 1;
+}
+
+@keyframes section-content-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* h1 - huvudrubrik till de olika sidorna */
 .h1-dish {
   font-size: 1.5rem;
