@@ -57,6 +57,14 @@ function setDropdownMenu() {
       }
       //Stänger menyn
       menuDropdown.classList.toggle("menu-open");
+      // Ta bort klassen "footer-open" från <footer> om den är satt
+      let footer = document.querySelector(".footer-open");
+      if (footer) {
+        footer.classList.remove("footer-open");
+        buttonFooterOpener.innerText = "Se beställning";
+        buttonFooterOpener.style.backgroundColor = "#2C4251";
+        buttonFooterOpener.style.color = "#FFCB47";
+      }
     });
   }
 
@@ -124,15 +132,15 @@ function menuAndFooterOpeners() {
   // Gör "se beställning"-knappen klickbar
   buttonFooterOpener.addEventListener("click", () => {
     if (buttonFooterOpener.innerText === "Se beställning") {
-      footer.classList.toggle("footer-open");
-
+      footer.classList.add("footer-open");
+      document.querySelector("header").classList.remove("hide-header");
       setTimeout(() => {
         buttonFooterOpener.innerText = "Tillbaka";
         buttonFooterOpener.style.backgroundColor = "#FFCB47";
         buttonFooterOpener.style.color = "#2C4251";
       }, 1000);
     } else {
-      footer.classList.toggle("footer-open");
+      footer.classList.remove("footer-open");
 
       setTimeout(() => {
         buttonFooterOpener.innerText = "Se beställning";
