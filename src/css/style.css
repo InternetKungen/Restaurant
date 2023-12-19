@@ -194,27 +194,31 @@ menu a {
   padding: var(--padding);
   border-left: 1px solid var(--black);
   border-right: 1px solid var(--black);
+  white-space: nowrap;
 }
 /* Visar dropdownmenyn */
 .menu-open {
   display: flex;
   position: absolute;
   top: 70px;
-  animation:menu-open-drop-down-animation 0.2s ease-in-out 1;
+  animation:menu-open-drop-down-animation 0.3s ease-in-out 1;
   z-index: 4;
+  overflow: hidden;
 }
 
 @keyframes menu-open-drop-down-animation {
   0% {
-    /* top:-400px; */
     transform: translateY(-300px);
+    width: 10vw;
     opacity: 0;
     z-index: -100;
-    
+  }
+  40% {
+    width: 20vw;
+    transform: translateY(0);
   }
   100% {
-    /* top:59px; */
-    transform: translateY(0);
+    width: 70vw;
     opacity: 1;
     z-index: 3;
   }
