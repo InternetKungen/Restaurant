@@ -1,4 +1,4 @@
-function scrollToElement(elementId) {
+function scrollToTop(elementId) {
   var element = document.getElementById(elementId);
   console.log(element);
 
