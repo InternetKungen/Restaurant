@@ -144,11 +144,11 @@
   animation: section-om-oss__picture-scroller__article__fade-in 2s ease 1;
   animation-delay: 0.8s;
   animation-fill-mode: forwards;
-  padding: 15px 65px 15px 15px;
+  padding: 8px 65px 8px 15px;
   width: 100vw;
   max-width: 800px;
   height: 88px;
-  font-size: medium;
+  font-size: 15px;
   }
   
   
