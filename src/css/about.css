@@ -191,3 +191,16 @@
     max-width: 50%;
     height: 2rem;
   }
+
+  .social-media-icon-container {
+    margin: 0 auto;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .social-media-icon-container img {
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+
+  }
