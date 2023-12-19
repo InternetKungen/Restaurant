@@ -86,7 +86,7 @@ button {
 
 button:active {
   transform: translateY(4px);
-  transition: .2s linear;
+  transition: linear;
 }
 
 a {

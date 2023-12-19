@@ -304,22 +304,29 @@ function fillMenuOnThePage(menu, plats) {
 }
 
 // Anropa generateMenu för varje menykategori med motsvarande data från databasen
-fillMenuOnThePage(db.bbqs, document.querySelector("#bbqs"));
-fillMenuOnThePage(db.burgers, document.querySelector("#burgers"));
-fillMenuOnThePage(
-  db["fried-chicken"],
-  document.querySelector("#fried-chicken")
-);
-fillMenuOnThePage(db.porks, document.querySelector("#porks"));
-fillMenuOnThePage(db.steaks, document.querySelector("#steaks"));
-fillMenuOnThePage(db.sausages, document.querySelector("#sausages"));
-fillMenuOnThePage(db.sandwiches, document.querySelector("#sandwiches"));
-fillMenuOnThePage(db.pizzas, document.querySelector("#pizzas"));
-fillMenuOnThePage(db.drinks, document.querySelector("#drinks"));
-fillMenuOnThePage(db["ice-cream"], document.querySelector("#ice-cream"));
-fillMenuOnThePage(db.chocolates, document.querySelector("#chocolates"));
-fillMenuOnThePage(db.desserts, document.querySelector("#desserts"));
-fillMenuOnThePage(db.breads, document.querySelector("#breads"));
+setTimeout(() => {
+  fillMenuOnThePage(db.bbqs, document.querySelector("#bbqs"));
+  fillMenuOnThePage(db.burgers, document.querySelector("#burgers"));
+  fillMenuOnThePage(
+    db["fried-chicken"],
+    document.querySelector("#fried-chicken")
+  );
+  fillMenuOnThePage(db.porks, document.querySelector("#porks"));
+  setTimeout(() => {
+    fillMenuOnThePage(db.steaks, document.querySelector("#steaks"));
+    fillMenuOnThePage(db.sausages, document.querySelector("#sausages"));
+    fillMenuOnThePage(db.sandwiches, document.querySelector("#sandwiches"));
+    fillMenuOnThePage(db.pizzas, document.querySelector("#pizzas"));
+
+    setTimeout(() => {
+      fillMenuOnThePage(db.drinks, document.querySelector("#drinks"));
+      fillMenuOnThePage(db["ice-cream"], document.querySelector("#ice-cream"));
+      fillMenuOnThePage(db.chocolates, document.querySelector("#chocolates"));
+      fillMenuOnThePage(db.desserts, document.querySelector("#desserts"));
+      fillMenuOnThePage(db.breads, document.querySelector("#breads"));
+    }, 1000);
+  }, 1000);
+}, 1000);
 
 // Funktion för att lägga till en produkt i varukorgen
 // beställning
