@@ -422,3 +422,18 @@ function uppdateraAntalValdaProdukter(värde) {
   document.querySelector(".span-footer-dishes").textContent =
     antalValdaProdukter;
 }
+
+// bestälning submit ---------------
+let beställaBtn = document.getElementById("beställning-submit");
+beställaBtn.addEventListener("click", () => validateAndSubmit());
+
+function validateAndSubmit() {
+  let form = document.getElementById("beställning-form");
+  var bordsnummerValue = document.getElementById("bordsnummer").value;
+
+  if (bordsnummerValue === "" || isNaN(parseInt(bordsnummerValue, 10))) {
+    alert("Ange bordsnumret korrekt");
+  } else {
+    form.submit();
+  }
+}
