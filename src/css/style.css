@@ -505,6 +505,9 @@ footer {
   padding: var(--padding);
 }
 
+.section-footer-order {
+  color: var(--white);
+}
 /* Ul - lista för att vias valda maträtter */
 .ul-footer-order {
   width: 100%;
