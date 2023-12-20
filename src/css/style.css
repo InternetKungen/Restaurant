@@ -410,7 +410,7 @@ footer {
   background-color: var(--black);
   border-top: 1px solid var(--red);
   z-index: 15;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Klass för att toggla expansion av footern */
@@ -459,6 +459,7 @@ footer {
   border: 1px solid var(--red);
   background-color: var(--black);
   color: var(--red);
+  border-radius: 50px;
 }
 
 /* Section - container för att visa beställning */
@@ -538,6 +539,7 @@ footer {
   background-color: var(--black);
   border: 1px solid var(--red);
   padding: var(--padding);
+  border-radius: 5px;
 }
 
 /* filter meny  */
@@ -592,4 +594,74 @@ footer {
 /* Klass för att toggla olika element att döljas/visas */
 .hide {
   display: none;
+}
+
+#beställning-form {
+  color: var(--red);
+
+}
+
+#bordsnummer {
+  background-color: var(--black);
+  border: 1px solid var(--border-color);
+  color: var(--white);
+}
+
+@media screen and (max-width: 636px) {
+  .article-dish {
+    /* Anpassa utseendet för mindre skärmar här */
+    width: 100%;
+    max-width: 100%; /* Full bredd på mindre skärmar */
+    height: 250px; /* Anpassa höjden automatiskt */
+    margin-right: 0; /* Ta bort eventuell marginal till höger */
+  }
+  .article-dish img {
+    /* Anpassa utseendet för mindre skärmar här */
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    border-right: 1px solid var(--border-color);
+    object-fit: cover; /* Täck hela behållaren och bevara proportionerna */
+    object-position: center;
+    border-radius: 0 0 5px 0;
+  }
+
+  .h3-dish {
+    position: relative;
+    top: -105px;
+    right: -34px;
+    max-width: 60%;
+  }  
+
+  .p-dish {
+    position: relative;
+    top: -98px;
+    right: -65px;
+    max-width: 65%;
+    height: 0;
+    padding-left: 24px;
+  }
+
+  .p-price {
+    position: relative;
+    top: -52px;
+    left: 50px;
+    height: 0;
+  }
+  .span-dish {
+    margin-top: 0;
+    /* padding-top: 10px; */
+    height: 0px;
+  }
+  .p-article-originandrate {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .button-menu-filter {
+    font-size: 1em;
+  }
+  .button-article-add {
+    position: relative;
+    top: 2px;
+  }
 }
