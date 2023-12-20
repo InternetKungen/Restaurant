@@ -136,16 +136,16 @@ function menuAndFooterOpeners() {
       document.querySelector("header").classList.remove("hide-header");
       setTimeout(() => {
         buttonFooterOpener.innerText = "Tillbaka";
-        buttonFooterOpener.style.backgroundColor = "#FFCB47";
-        buttonFooterOpener.style.color = "#2C4251";
+        buttonFooterOpener.style.backgroundColor = "#f04245";
+        buttonFooterOpener.style.color = "#0a0a0a";
       }, 1000);
     } else {
       footer.classList.remove("footer-open");
 
       setTimeout(() => {
         buttonFooterOpener.innerText = "Se beställning";
-        buttonFooterOpener.style.backgroundColor = "#2C4251";
-        buttonFooterOpener.style.color = "#FFCB47";
+        buttonFooterOpener.style.backgroundColor = "#0a0a0a";
+        buttonFooterOpener.style.color = "#f04245";
       }, 1000);
     }
   });
