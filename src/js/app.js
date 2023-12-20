@@ -439,3 +439,23 @@ function validateAndSubmit() {
     form.submit();
   }
 }
+
+
+
+// Väljer ut och genererar menyobjekt för "Dagens special"
+function todaysDishes(){
+
+  // Index för de fyra utvalda rätterna som ska visas
+  const chosenIndexes = [0, 2, 4, 6]; // Ändra dessa för att byta maträtter
+  // Array för de utvalda menyobjekten
+  const dagensMenu = [];
+  // Fyller dagensMenu med de utvalda menyobjekten från db.best-foods
+  chosenIndexes.forEach((index) => {
+    if(index >= 0 && index < db['best-foods'].length){
+      dagensMenu.push(db['best-foods'][index]);
+    }
+  });
+
+  fillMenuOnThePage(dagensMenu, document.querySelector('.todays-dishes'));
+}
+todaysDishes();

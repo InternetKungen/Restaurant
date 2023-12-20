@@ -8,33 +8,6 @@
   --black: #0a0a0a;
   --white: #f3f7f3;
 
-  --body-bg: #0a0a0a;
-  --nav-bg-color: #0a0a0a;
-  --nav-text-color: #f04245;
-  --menu-icon: #f04245;
-  --menu-bg-color: #f04245;
-  --menu-li-border: #0a0a0a;
-  --menu-a-color: #0a0a0a;
-  --figure-logo-color: #8aa1b1;
-
-  --p-dagens-bg: #2c4251;
-  --p-dagens-color: #2c4251;
-  --article-dish-bg: #0a0a0a;
-  --p-dish-color: #f3f7f3;
-  --h1-dish-color: #0a0a0a;
-  --h1-dish-bg: #0a0a0a;
-  --h3-dish-color: #f04245;
-
-  --button-halfcircle-bg: #f04245;
-  --button-halfcircle-color: #2c4251;
-
-  --footer-bg: #0a0a0a;
-
-  --border-color: #f04242;
-
-  --red: #f04245;
-  --black: #0a0a0a;
-  --white: #f3f7f3;
 }
 
 * {
@@ -52,22 +25,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.todays-dish {
-  padding: 2rem;
-  line-height: 1.5;
-  font-size: 18px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 0 5px var(--red);
-  border-radius: 4px;
-}
-.todays-dish-img {
-  width: 260px;
-}
-.todays-dish-country {
-  font-size: 14px;
-  color: var(--red);
-  margin-bottom: 1rem;
-}
+
 /* -------------------------------------------------------------------------------- */
 
 body {
@@ -591,7 +549,7 @@ footer {
 
 .li-submenu-filter {
   /* margin-top: 2em; */
-  background-color: #f3f7f3;
+  background-color: var(--white);
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -605,30 +563,30 @@ footer {
   padding: 0.3em;
   font-size: 1.2em;
   flex-grow: 1;
-  outline: 1px solid #f04245;
-  background-color: #0a0a0a;
-  color: #f04245;
+  outline: 1px solid var(--red);
+  background-color: var(--black);
+  color: var(--red);
 }
 .button-active {
-  color: #0a0a0a;
-  background-color: #f04245;
+  color: var(--black);
+  background-color: var(--red);
 }
 
 .button-menu-filter-sub1,
 .button-menu-filter-sub2,
 .button-menu-filter-sub3,
 .button-menu-filter-sub4 {
-  background-color: #0a0a0a;
-  color: #f3f7f3;
-  outline: 1px solid #f3f7f3;
+  background-color: var(--black);
+  color: var(--white);
+  outline: 1px solid var(--white);
   border: 0;
   padding: 0.3em;
   font-size: 1.2em;
   flex-grow: 1;
 }
 .button-sub-active {
-  color: #0a0a0a;
-  background-color: #f3f7f3;
+  color: var(--black);
+  background-color: var(--white);
 }
 
 /* Klass för att toggla olika element att döljas/visas */
