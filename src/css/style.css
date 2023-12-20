@@ -452,7 +452,7 @@ footer {
   background-color: var(--black);
   border-top: 1px solid var(--red);
   z-index: 15;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Klass för att toggla expansion av footern */

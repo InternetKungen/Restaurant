@@ -62,8 +62,8 @@ function setDropdownMenu() {
       if (footer) {
         footer.classList.remove("footer-open");
         buttonFooterOpener.innerText = "Se beställning";
-        buttonFooterOpener.style.backgroundColor = "#2C4251";
-        buttonFooterOpener.style.color = "#FFCB47";
+        buttonFooterOpener.style.backgroundColor = "#0a0a0a";
+        buttonFooterOpener.style.color = "#f04245";
       }
     });
   }
@@ -138,15 +138,15 @@ function menuAndFooterOpeners() {
         buttonFooterOpener.innerText = "Tillbaka";
         buttonFooterOpener.style.backgroundColor = "#FFCB47";
         buttonFooterOpener.style.color = "#2C4251";
-      }, 1000);
+      }, 500);
     } else {
       footer.classList.remove("footer-open");
 
       setTimeout(() => {
         buttonFooterOpener.innerText = "Se beställning";
-        buttonFooterOpener.style.backgroundColor = "#2C4251";
-        buttonFooterOpener.style.color = "#FFCB47";
-      }, 1000);
+        buttonFooterOpener.style.backgroundColor = "#0a0a0a";
+        buttonFooterOpener.style.color = "#f04245";
+      }, 500);
     }
   });
 }
@@ -336,7 +336,7 @@ function läggTillProduktIBeställningen() {
   footer.classList.toggle("footer-added");
   setTimeout(() => {
     footer.classList.toggle("footer-added");
-  }, 1000);
+  }, 300);
 
   // Hämta produktnamnet från det klickade elementet
   let produktNamn = this.parentNode.querySelector(".h3-dish").textContent;
