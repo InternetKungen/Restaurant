@@ -502,7 +502,6 @@ footer {
   background-color: var(--black);
   color: var(--red);
   border-radius: 50px;
-  box-shadow: 0 0 -5px var(--red);
 }
 
 /* Section - container för att visa beställning */
@@ -582,6 +581,7 @@ footer {
   background-color: var(--black);
   border: 1px solid var(--red);
   padding: var(--padding);
+  border-radius: 5px;
 }
 
 /* filter meny  */
@@ -636,4 +636,15 @@ footer {
 /* Klass för att toggla olika element att döljas/visas */
 .hide {
   display: none;
+}
+
+#beställning-form {
+  color: var(--red);
+
+}
+
+#bordsnummer {
+  background-color: var(--black);
+  border: 1px solid var(--border-color);
+  color: var(--white);
 }
