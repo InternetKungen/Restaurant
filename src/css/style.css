@@ -629,14 +629,14 @@ footer {
   .h3-dish {
     position: relative;
     top: -105px;
-    right: -34px;
+    right: -50px;
     max-width: 60%;
   }  
 
   .p-dish {
     position: relative;
-    top: -98px;
-    right: -65px;
+    top: -88px;
+    right: -68px;
     max-width: 65%;
     height: 0;
     padding-left: 24px;
@@ -644,8 +644,8 @@ footer {
 
   .p-price {
     position: relative;
-    top: -52px;
-    left: 50px;
+    top: -50px;
+    left: 75px;
     height: 0;
   }
   .span-dish {
