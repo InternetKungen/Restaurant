@@ -368,11 +368,13 @@ function läggTillProduktIBeställningen() {
 
     buttonsSpan.classList.add("span-footer-buttons");
     addButton.classList.add("button-footer-order", "button-footer-order-add");
+    addButton.type = "button";
     addButton.textContent = "Lägg till";
     removeButton.classList.add(
       "button-footer-order",
       "button-footer-order-remove"
     );
+    removeButton.type = "button";
     removeButton.textContent = "Ta bort";
 
     addButton.addEventListener("click", function () {

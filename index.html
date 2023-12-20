@@ -417,20 +417,28 @@
       <!-- Section - container där beställningen listas och knapp för att beställa -->
       <section class="section-footer-order">
         <!-- Formulär för beställning -->
-        <form id="beställning-form" action="action_page.php" method="post" target="_blank">
-            <!-- Etikett för att ange bordnummer -->
-            <label for="bordsnummer">Ange Bordsnummer:</label>
-            <!-- Inmatningsfält för bordnummer -->
-            <input type="text" id="bordsnummer" name="bordsnummer" required>
+        <!-- Etikett för att ange bordnummer -->
+        <form id="beställning-form" action="action_page.php" target="_blank" >
+          <label for="bordsnummer">Ange Bordsnummer:</label>
+          <!-- Inmatningsfält för bordnummer -->
+          <input type="text" id="bordsnummer" name="bordsnummer" required>
             <!-- Lista för beställning -->
+            <ul class="ul-footer-order">
+                <!-- Här har du möjlighet att lägga till dina beställningsdetaljer -->
+                <!-- <li class="li-order">
+                  <span class="span-footer-itemname">Joe's KC BBQ</span>
+                  <span class="span-footer-numberofitem"> 1 </span>
+                  <span class="span-footer-buttons">
+                    <button type="button" class="button-footer-order button-footer-order-add">Lägg till</button>
+                    <button type="button" class="button-footer-order button-footer-order-remove">Ta bort</button>
+                  </span>
+                </li> -->
+            </ul>
           </form>
-          <ul class="ul-footer-order">
-              <!-- Här har du möjlighet att lägga till dina beställningsdetaljer -->
-          </ul>
-      </section>
-      <section class="section-footer-submitorder">
-          <!-- Knapp för att göra beställningen -->
-          <button id="beställning-submit" class="button-footer-submitorder" type="button">Beställa</button>
+          <section class="section-footer-submitorder">
+              <!-- Knapp för att göra beställningen -->
+              <button id="beställning-submit" class="button-footer-submitorder" type="button">Beställa</button>
+          </section>
       </section>
     </footer>
   </body>
