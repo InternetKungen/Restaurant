@@ -136,8 +136,8 @@ function menuAndFooterOpeners() {
       document.querySelector("header").classList.remove("hide-header");
       setTimeout(() => {
         buttonFooterOpener.innerText = "Tillbaka";
-        buttonFooterOpener.style.backgroundColor = "#FFCB47";
-        buttonFooterOpener.style.color = "#2C4251";
+        buttonFooterOpener.style.backgroundColor = "#f04245";
+        buttonFooterOpener.style.color = "#0a0a0a";
       }, 500);
     } else {
       footer.classList.remove("footer-open");
@@ -368,11 +368,13 @@ function läggTillProduktIBeställningen() {
 
     buttonsSpan.classList.add("span-footer-buttons");
     addButton.classList.add("button-footer-order", "button-footer-order-add");
+    addButton.type = "button";
     addButton.textContent = "Lägg till";
     removeButton.classList.add(
       "button-footer-order",
       "button-footer-order-remove"
     );
+    removeButton.type = "button";
     removeButton.textContent = "Ta bort";
 
     addButton.addEventListener("click", function () {
@@ -395,7 +397,7 @@ function läggTillProduktIBeställningen() {
     listItem.appendChild(buttonsSpan);
 
     // Lägg till elementet i varukorgen
-    document.querySelector(".section-footer-order").appendChild(listItem);
+    document.querySelector(".ul-footer-order").appendChild(listItem);
 
     // Öka räknaren när en ny produkt läggs till
     uppdateraAntalValdaProdukter(1);

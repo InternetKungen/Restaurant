@@ -501,16 +501,20 @@ footer {
   border: 1px solid var(--red);
   background-color: var(--black);
   color: var(--red);
+  border-radius: 50px;
+  box-shadow: 0 0 -5px var(--red);
 }
 
 /* Section - container för att visa beställning */
 .section-footer-order {
   width: 100%;
   padding: var(--padding);
+
 }
 
 .section-footer-order {
   color: var(--white);
+  overflow: auto;
 }
 /* Ul - lista för att vias valda maträtter */
 .ul-footer-order {
