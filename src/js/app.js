@@ -395,7 +395,7 @@ function läggTillProduktIBeställningen() {
     listItem.appendChild(buttonsSpan);
 
     // Lägg till elementet i varukorgen
-    document.querySelector(".section-footer-order").appendChild(listItem);
+    document.querySelector(".ul-footer-order").appendChild(listItem);
 
     // Öka räknaren när en ny produkt läggs till
     uppdateraAntalValdaProdukter(1);

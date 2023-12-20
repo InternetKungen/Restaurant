@@ -507,10 +507,12 @@ footer {
 .section-footer-order {
   width: 100%;
   padding: var(--padding);
+
 }
 
 .section-footer-order {
   color: var(--white);
+  overflow: auto;
 }
 /* Ul - lista för att vias valda maträtter */
 .ul-footer-order {
