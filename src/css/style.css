@@ -665,3 +665,26 @@ footer {
     top: 2px;
   }
 }
+
+@media screen and (max-width: 280px) {
+  .h3-dish {
+    position: relative;
+    top: -105px;
+    right: -50px;
+    max-width: 60%;
+    font-size: small;
+  } 
+  .p-dish {
+    position: relative;
+    top: -88px;
+    right: -68px;
+    max-width: 45%;
+    height: 0;
+    padding-left: 24px;
+    font-size: 12px;
+  }
+  .button-menu-filter {
+    font-size: 0.78em;
+  }
+}
+
