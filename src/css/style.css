@@ -602,6 +602,30 @@ footer {
   color: var(--white);
 }
 
+/* beställning-popup  */
+.popup-contanier{
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: fixed;
+  z-index: 100;
+  background-color:var(--black);
+  color: var(--white);
+  border: 1px solid var(--border-color);
+  padding:1rem;
+  border-radius: 10px;
+  height: 50%;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.popup-contanier img {
+  width: 10rem;
+}
+
+/*MEDIA QUERIES-------*/
+
 @media screen and (max-width: 636px) {
   .article-dish {
     /* Anpassa utseendet för mindre skärmar här */
@@ -661,24 +685,77 @@ footer {
   }
 }
 
-/* beställning-popup  */
-.popup-contanier{
-  flex-direction: column;
-  justify-content: space-evenly;
-  position: fixed;
-  z-index: 100;
-  background-color:var(--black);
-  color: var(--white);
-  border: 1px solid var(--border-color);
-  padding:1rem;
-  border-radius: 10px;
-  height: 50%;
-  width: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  text-align: center;
+@media screen and (max-width: 360px) {
+  .h3-dish {
+    position: relative;
+    top: -105px;
+    right: -57px;
+    max-width: 55%;
+    font-size:medium ;
+  } 
+  .p-dish {
+    position: relative;
+    top: -88px;
+    right: -68px;
+    max-width: 45%;
+    height: 0;
+    padding-left: 24px;
+    font-size: 13px;
+  }
+  .button-menu-filter {
+    font-size: 0.78em;
+  }
+  .span-p-rate {
+    font-size: 0.8rem;
+    color: var(--red);
+    float: right;
+  }
+  .span-p-origin {
+    font-size: 0.8rem;
+    color: var(--red);
+    float: left;
+  }
 }
-.popup-contanier img {
-  width: 10rem;
+
+
+
+@media screen and (max-width: 280px) {
+  .h3-dish {
+    position: relative;
+    top: -115px;
+    right: -77px;
+    max-width: 40%;
+    font-size: small;
+  } 
+  .p-dish {
+    position: relative;
+    top: -102px;
+    right: -68px;
+    max-width: 45%;
+    height: 0;
+    padding-left: 24px;
+    font-size: 12px;
+  }
+  .button-menu-filter {
+    font-size: 0.73em;
+  }
+  .span-p-rate {
+    font-size: 0.7rem;
+    color: var(--red);
+    float: right;
+  }
+  .span-p-origin {
+    font-size: 0.7rem;
+    color: var(--red);
+    float: left;
+  }
+  .p-price {
+    position: relative;
+    top: -48px;
+    left: 15px;
+    height: 0;
+  }
 }
+
+
+
