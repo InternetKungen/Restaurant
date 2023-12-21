@@ -431,31 +431,38 @@ beställaBtn.addEventListener("click", () => validateAndSubmit());
 
 function validateAndSubmit() {
   let form = document.getElementById("beställning-form");
-  var bordsnummerValue = document.getElementById("bordsnummer").value;
+  let bordsnummerValue = document.getElementById("bordsnummer").value;
+  let beställningBekräftelse = document.querySelector(".popup-contanier");
+  let footerBular = document.querySelector(".footer-open ");
 
   if (bordsnummerValue === "" || isNaN(parseInt(bordsnummerValue, 10))) {
     alert("Ange bordsnumret korrekt");
   } else {
-    form.submit();
+    setTimeout(() => {
+      beställningBekräftelse.style.display = "flex";
+      footerBular.style.filter = "blur(5px) brightness(.7)";
+      setTimeout(() => {
+        beställningBekräftelse.style.display = "none";
+        footerBular.style.filter = "none";
+      }, 3000);
+    }, 500);
+    // form.submit();
   }
 }
 
-
-
 // Väljer ut och genererar menyobjekt för "Dagens special"
-function todaysDishes(){
-
+function todaysDishes() {
   // Index för de fyra utvalda rätterna som ska visas
   const chosenIndexes = [0, 2, 4, 6]; // Ändra dessa för att byta maträtter
   // Array för de utvalda menyobjekten
   const dagensMenu = [];
   // Fyller dagensMenu med de utvalda menyobjekten från db.best-foods
   chosenIndexes.forEach((index) => {
-    if(index >= 0 && index < db['best-foods'].length){
-      dagensMenu.push(db['best-foods'][index]);
+    if (index >= 0 && index < db["best-foods"].length) {
+      dagensMenu.push(db["best-foods"][index]);
     }
   });
 
-  fillMenuOnThePage(dagensMenu, document.querySelector('.todays-dishes'));
+  fillMenuOnThePage(dagensMenu, document.querySelector(".todays-dishes"));
 }
 todaysDishes();
