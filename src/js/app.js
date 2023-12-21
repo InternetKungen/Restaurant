@@ -439,7 +439,7 @@ function validateAndSubmit() {
     alert("Ange bordsnumret korrekt");
   } else {
     setTimeout(() => {
-      beställningBekräftelse.style.display = "block";
+      beställningBekräftelse.style.display = "flex";
       footerBular.style.filter = "blur(5px) brightness(.7)";
       setTimeout(() => {
         beställningBekräftelse.style.display = "none";

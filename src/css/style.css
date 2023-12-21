@@ -663,13 +663,16 @@ footer {
 
 /* beställning-popup  */
 .popup-contanier{
+  flex-direction: column;
+  justify-content: space-evenly;
   position: fixed;
   z-index: 100;
   background-color:var(--black);
   color: var(--white);
   border: 1px solid var(--border-color);
-  padding: 4rem;
+  padding:1rem;
   border-radius: 10px;
+  height: 50%;
   width: 50%;
   top: 50%;
   left: 50%;
@@ -677,8 +680,5 @@ footer {
   text-align: center;
 }
 .popup-contanier img {
-  width: 12rem;
-}
-.popup-contanier div {
-  margin-bottom: 2rem;
+  width: 10rem;
 }
