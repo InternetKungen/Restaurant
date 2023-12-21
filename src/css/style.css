@@ -544,11 +544,6 @@ footer {
 
 /* filter meny  */
 
-/* .p-name, .p-dsc, .p-price, .p-rate, .p-country { 
-  width: 100%;
-  color: #F04245;
-} */
-
 .li-submenu-filter {
   /* margin-top: 2em; */
   background-color: var(--white);
@@ -664,4 +659,26 @@ footer {
     position: relative;
     top: 2px;
   }
+}
+
+/* beställning-popup  */
+.popup-contanier{
+  position: fixed;
+  z-index: 100;
+  background-color:var(--black);
+  color: var(--white);
+  border: 1px solid var(--border-color);
+  padding: 4rem;
+  border-radius: 10px;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.popup-contanier img {
+  width: 12rem;
+}
+.popup-contanier div {
+  margin-bottom: 2rem;
 }
